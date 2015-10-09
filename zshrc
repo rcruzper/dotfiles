@@ -13,10 +13,17 @@ antigen bundle brew-cask
 antigen bundle osx
 antigen bundle command-not-found
 antigen bundle mvn
+antigen bundle tmux
+antigen bundle docker
+antigen bundle gradle
+antigen bundle httpie
+antigen bundle gitignore
 
 antigen bundle ssh-agent
 
 # Load the theme
-antigen theme norm
+antigen theme steeef
 
 antigen apply
+
+export EDITOR='vim'

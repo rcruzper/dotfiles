@@ -15,14 +15,16 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""
 set t_Co=256
 syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+"let g:solarized_termcolors=256
+"colorscheme solarized
 
 """"""""""""""""""""""""""""""
 " 04. Vim UI                 "
 """"""""""""""""""""""""""""""
 set number
-set cul
 set ignorecase
 set ruler
 "set numberwidth=6
