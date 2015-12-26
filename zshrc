@@ -13,7 +13,6 @@ antigen bundle brew-cask
 antigen bundle osx
 antigen bundle command-not-found
 antigen bundle mvn
-antigen bundle tmux
 antigen bundle docker
 antigen bundle gradle
 antigen bundle httpie
@@ -22,7 +21,8 @@ antigen bundle gitignore
 antigen bundle ssh-agent
 
 # Load the theme
-antigen theme steeef
+#antigen theme steeef
+antigen theme oskarkrawczyk/honukai-iterm-zsh honukai
 
 antigen apply
 
