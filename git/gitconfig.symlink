@@ -1,0 +1,10 @@
+[user]
+        name = Raúl Cruz
+        email = rcruzper@gmail.com
+[push]
+        default = simple
+[core]
+        excludesfile = ~/.gitignore
+        editor = vim
+[color]
+        ui = auto

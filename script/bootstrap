@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+# remove old dot files
+echo "Removing old dot files"
+rm ~/.zshrc
+rm ~/.vimrc
+rm ~/.gitconfig
+rm -rf .vim
+rm ~/.gitignore
+
+# link new dot files
+echo "Installing new dot files"
+ln -s ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc
+ln -s ~/.dotfiles/vim/vimrc.symlink ~/.vimrc
+ln -s ~/.dotfiles/git/gitignore.symlink ~/.gitignore
+ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
+
+# install homebrew
+echo "Installing homebrew"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew tap homebrew/bundle
+
+# install brew packages
+echo "Installing brew packages"
+cd ~/.dotfiles/brew
+brew bundle
+cd -
+

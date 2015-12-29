@@ -1,0 +1,17 @@
+cask_args appdir: '/Applications'
+
+brew 'git'
+brew 'node'
+brew 'zsh'
+brew 'z'
+brew 'timedog'
+brew 'openssl'
+brew 'maven'
+brew 'gradle'
+
+cask 'atom'
+cask 'dockertoolbox'
+cask 'libreoffice'
+cask 'sequel-pro'
+cask 'sts'
+
