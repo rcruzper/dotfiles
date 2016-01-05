@@ -8,6 +8,7 @@ brew 'timedog'
 brew 'openssl'
 brew 'maven'
 brew 'gradle'
+brew 'tree'
 
 cask 'atom'
 cask 'dockertoolbox'
