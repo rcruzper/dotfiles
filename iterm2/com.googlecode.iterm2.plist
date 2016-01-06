@@ -465,11 +465,11 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>847 420 231 329 0 0 2560 1417 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1605 151 566 274 0 0 2560 1417 </string>
+	<string>1605 151 566 140 0 0 2560 1417 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>1471 941 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>127 488 985 573 0 0 2560 1417 </string>
+	<string>127 509 985 552 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1148,7 +1148,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FiraMono 14</string>
+			<string>FiraMono-Medium 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1326,7 +1326,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>0.94989528426204806</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
