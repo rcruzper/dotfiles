@@ -1,5 +1,7 @@
 cask_args appdir: '/Applications'
 
+tap caskroom/fonts
+
 brew 'git'
 brew 'node'
 brew 'zsh'
@@ -15,4 +17,5 @@ cask 'dockertoolbox'
 cask 'libreoffice'
 cask 'sequel-pro'
 cask 'sts'
+cask 'font-fira-mono'
 
