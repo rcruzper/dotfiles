@@ -34,5 +34,7 @@ fi
 export EDITOR='vim'
 
 # Docker
-eval $(docker-machine env default --shell=bash)
+#eval $(docker-machine env default --shell=bash)
 
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

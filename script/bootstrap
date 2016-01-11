@@ -7,6 +7,7 @@ rm ~/.vimrc
 rm ~/.gitconfig
 rm -rf .vim
 rm ~/.gitignore
+rm ~/.iterm2_shell_integration.zsh
 
 # link new dot files
 echo "Installing new dot files"
@@ -14,6 +15,7 @@ ln -s ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/.dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/.dotfiles/git/gitignore.symlink ~/.gitignore
 ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
+ln -s ~/.dotfiles/iterm2/iterm2_shell_integration.zsh.symlink ~/.iterm2_shell_integration.zsh
 
 # install homebrew
 echo "Installing homebrew"
