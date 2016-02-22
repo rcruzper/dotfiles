@@ -24,7 +24,10 @@ if ! zgen saved; then
 
     zgen load zsh-users/zsh-completions src
 
-    # theme
+    # Docker aliases
+    zgen load rcruzper/zsh-docker-aliases
+
+    # Theme
     zgen load oskarkrawczyk/honukai-iterm-zsh honukai
 
     zgen save
@@ -33,6 +36,5 @@ fi
 # Shell
 export EDITOR='vim'
 
-# Docker
-eval $(docker-machine env default --shell=bash)
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
