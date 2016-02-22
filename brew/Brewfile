@@ -1,6 +1,6 @@
 cask_args appdir: '/Applications'
 
-tap caskroom/fonts
+tap 'caskroom/fonts'
 
 brew 'git'
 brew 'node'
