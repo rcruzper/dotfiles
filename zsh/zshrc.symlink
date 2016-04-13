@@ -26,6 +26,7 @@ if ! zgen saved; then
 
     # Docker aliases
     zgen load rcruzper/zsh-docker-aliases
+    zgen load rcruzper/zsh-git-plugin
 
     # Theme
     zgen load oskarkrawczyk/honukai-iterm-zsh honukai
@@ -35,6 +36,8 @@ fi
 
 # Shell
 export EDITOR='vim'
+
+alias mvn='mvn-color'
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
