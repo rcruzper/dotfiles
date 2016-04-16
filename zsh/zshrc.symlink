@@ -37,7 +37,7 @@ fi
 # Shell
 export EDITOR='vim'
 
-alias mvn='mvn-color'
+#alias mvn='mvn-color'
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
