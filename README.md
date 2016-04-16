@@ -17,24 +17,24 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 
 ## Utilities installed
 - zsh
-- zgen
+- [zgen](https://github.com/tarjoilija/zgen) - A lightweight plugin manager for Zsh.
 - git
 - node
-- z
-- timedog
+- [z](https://github.com/rupa/z) - Tracks your most used directories, based on 'frecency'.
+- [timedog](https://github.com/nlfiedler/timedog) - Displays the set of files that were saved for any given backup created by Mac OS X Time Machine.
 - openssl
 - maven
 - gradle
 - tree
 - python
-- httpie
-- fzf
+- [httpie](https://github.com/jkbrzt/httpie) - Command line HTTP client.
+- [fzf](https://github.com/junegunn/fzf) - A general-purpose command-line fuzzy finder.
 - atom
 - dockertoolbox
 - libreoffice
 - sequel-pro
 - sts
-- font-fira-mono
+- [font-fira-mono](https://www.fontsquirrel.com/fonts/fira-mono)
 
 ## TODO
 - [ ] Demo gif
@@ -50,11 +50,12 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 - [x] ~~Improve logs~~
 - [x] ~~Set requeriments~~
 - [ ] Write description about the apps and scripts executed
-- [ ] Uninstall
+- [ ] Uninstall script
 - [x] ~~Docker execution at startup optional~~
 - [x] ~~Update script~~
 - [ ] Update zgen at bootstrap
 - [ ] Avoid password if brew permissions are correct
+- [ ] Save logs on /tmp for issue tracking
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
