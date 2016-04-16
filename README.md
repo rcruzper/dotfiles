@@ -8,6 +8,6 @@ git clone --recursive git@github.com:rcruzper/dotfiles.git .dotfiles
 - [ ] Demo gif
 - [ ] How to install
 - [ ] Fix permissions for homebrew before installation
-- [ ] Update brew before installation
+- [x] Update brew if it is already installed
 - [ ] Add selectable list for installation bootstrap
 - [ ] Commands more used

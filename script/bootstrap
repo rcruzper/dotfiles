@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # remove old dot files
-echo "Removing old dot files"
+echo "☕  Removing old dot files..."
 rm ~/.zshrc
 rm ~/.vimrc
 rm ~/.gitconfig
@@ -10,20 +10,26 @@ rm ~/.gitignore
 rm ~/.iterm2_shell_integration.zsh
 
 # link new dot files
-echo "Installing new dot files"
+echo "☕  Installing new dot files..."
 ln -s ~/.dotfiles/zsh/zshrc.symlink ~/.zshrc
 ln -s ~/.dotfiles/vim/vimrc.symlink ~/.vimrc
 ln -s ~/.dotfiles/git/gitignore.symlink ~/.gitignore
 ln -s ~/.dotfiles/git/gitconfig.symlink ~/.gitconfig
 ln -s ~/.dotfiles/iterm2/iterm2_shell_integration.zsh.symlink ~/.iterm2_shell_integration.zsh
 
-# install homebrew
-echo "Installing homebrew"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# install or udpate homebrew
+if [ -f "/usr/local/bin/brew" ]
+then
+    echo "☕  Updating homebrew..."
+    brew update
+else
+    echo "☕  Installing homebrew..."
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 brew tap homebrew/bundle
 
 # install brew packages
-echo "Installing brew packages"
+echo "☕  Installing brew packages..."
 cd ~/.dotfiles/brew
 brew bundle
 cd -
