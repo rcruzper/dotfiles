@@ -10,6 +10,7 @@ then
         echo "> Updating homebrew"
         sudo chown -R "$USER":admin /usr/local  # it needs test
         brew update
+        brew upgrade
     fi
 fi
 
