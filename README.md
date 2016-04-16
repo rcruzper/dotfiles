@@ -1,8 +1,13 @@
-# dotfiles
+# Dotfiles
 
-## How to install
+This is my set of configuration files to get ready in any new machine. If you want to know more about dotfiles, see [dotfiles.github.io](https://dotfiles.github.io/).
+
+## Installation
+
+```terminal
 git clone --recursive git@github.com:rcruzper/dotfiles.git ~/.dotfiles
 ~/.dotfiles/script/bootstrap
+```
 
 ## TODO
 - [ ] Demo gif
