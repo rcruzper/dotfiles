@@ -201,12 +201,22 @@ execute_docker_on_launch() {
             > ~/Library/LaunchAgents/com.docker.machine.default.plist
         fi
 
-        local number=$(ps aux | grep com.docker.machine.default | wc -l)
+        local number=$(launchctl list | grep com.docker.machine.default | wc -l)
         if ! [ $number -gt 0 ]
         then
-            info "Execution of docker on launch"
-            launchctl load ~/Library/LaunchAgents/com.docker.machine.default.plist
-            success "Execution of docker on launch"
+            info "Execution of docker on startup"
+            user "Do you want to execute docker at startup? (y/n)"
+            read -n 1 action
+
+            case "$action" in
+              y )
+                launchctl load ~/Library/LaunchAgents/com.docker.machine.default.plist
+                success "Execution of docker at startup"
+                ;;
+              * )
+                ;;
+            esac
+
             echo ''
         fi
     fi

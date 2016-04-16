@@ -19,6 +19,7 @@ git clone --recursive git@github.com:rcruzper/dotfiles.git ~/.dotfiles
 - [ ] Set requeriments
 - [ ] Write description about the apps and scripts executed
 - [ ] Uninstall
+- [x] Docker execution at startup optional
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
