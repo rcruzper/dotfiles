@@ -49,12 +49,12 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 - [x] ~~Split macos-linux options~~
 - [x] ~~Improve logs~~
 - [x] ~~Set requeriments~~
-- [ ] Write description about the apps and scripts executed
+- [x] ~~Write description about the apps and scripts executed~~
 - [ ] Uninstall script
 - [x] ~~Docker execution at startup optional~~
 - [x] ~~Update script~~
 - [ ] Update zgen at bootstrap
-- [ ] Avoid password if brew permissions are correct
+- [x] ~~Avoid password if brew permissions are correct~~
 - [ ] Save logs on /tmp for issue tracking
 
 ## Bugs
