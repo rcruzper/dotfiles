@@ -116,7 +116,7 @@ link_file () {
 }
 
 install_dotfiles () {
-  info 'Installing dotfiles'
+  info 'Installing symlinks'
 
   local overwrite_all=false backup_all=false skip_all=false
 
@@ -126,16 +126,18 @@ install_dotfiles () {
     link_file "$src" "$dst"
   done
 
+  success 'Symlinks installed'
+
   echo ''
 }
 
 install_brew() {
     if test "$(uname)" = "Darwin"
     then
-        info "Installing|Updating brew"
-        if source brew/install.sh > /tmp/dotfiles-brew 2>&1
+        info "Installing brew"
+        if source brew/install.sh > /tmp/dotfiles-brew-install 2>&1
         then
-            success "Homebrew installed|updated"
+            success "Homebrew installed"
             echo ''
         else
             fail "Error installing homebrew"

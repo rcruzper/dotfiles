@@ -20,7 +20,7 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 - [zgen](https://github.com/tarjoilija/zgen) - A lightweight plugin manager for Zsh.
 - git
 - node
-- [z](https://github.com/rupa/z) - Tracks your most used directories, based on 'frecency'.
+- [z](https://github.com/rupa/z) - Tracks your most used directories, based on 'frequency'.
 - [timedog](https://github.com/nlfiedler/timedog) - Displays the set of files that were saved for any given backup created by Mac OS X Time Machine.
 - openssl
 - maven
@@ -38,24 +38,24 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 
 ## TODO
 - [ ] Demo gif
+- [ ] List of more used commands
 - [x] ~~How to install~~
 - [x] ~~Fix permissions for homebrew before installation~~
 - [x] ~~Update brew if it is already installed~~
 - [ ] Add selectable list for brew packages
-- [ ] Commands more used
-- [ ] Brew link unlinked kegs
+- [x] ~~Brew link unlinked kegs~~
 - [x] ~~Add /usr/local/bin/zsh as default shell (chsh)~~
 - [x] ~~Input option to change gitconfig data~~
 - [x] ~~Split macos-linux options~~
 - [x] ~~Improve logs~~
-- [x] ~~Set requeriments~~
+- [x] ~~Set requirements~~
 - [x] ~~Write description about the apps and scripts executed~~
-- [ ] Uninstall script
 - [x] ~~Docker execution at startup optional~~
 - [x] ~~Update script~~
-- [ ] Update zgen at bootstrap
 - [x] ~~Avoid password if brew permissions are correct~~
-- [ ] Save logs on /tmp for issue tracking
+- [ ] Uninstall script
+- [ ] Update zgen at bootstrap
+- [ ] Try to modularize installation script by component with logs on /tmp for issue tracking
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
