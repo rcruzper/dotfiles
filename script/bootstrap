@@ -8,7 +8,7 @@ set -e
 source script/logging.sh
 
 info "Updating dotfiles"
-git pull > /dev/null
+git pull origin master > /dev/null
 git submodule foreach git pull > /dev/null
 success "Dotfiles updated"
 echo ''
