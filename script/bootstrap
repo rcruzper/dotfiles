@@ -8,8 +8,8 @@ set -e
 source script/logging.sh
 
 info "Updating dotfiles"
-git pull #> /dev/null
-git submodule foreach git pull #> /dev/null
+git pull > /dev/null
+git submodule update --init --recursive > /dev/null
 success "Dotfiles updated"
 echo ''
 
