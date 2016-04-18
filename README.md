@@ -56,6 +56,7 @@ If you want to update the configuration, you just need to execute `~/.dotfiles/s
 - [ ] Uninstall script
 - [ ] Update zgen at bootstrap
 - [ ] Try to modularize installation script by component with logs on /tmp for issue tracking
+- [ ] Add tmux configuration
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
