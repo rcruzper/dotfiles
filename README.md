@@ -1,5 +1,7 @@
 # Dotfiles
 
+![](https://raw.githubusercontent.com/rcruzper/dotfiles/master/dotfiles.png)
+
 This is my set of configuration files to get ready in any new machine. If you want to know more about dotfiles, see [dotfiles.github.io](https://dotfiles.github.io/).
 
 ## Requirements
@@ -14,6 +16,10 @@ git clone --recursive git@github.com:rcruzper/dotfiles.git ~/.dotfiles
 ```
 
 If you want to update the configuration, you just need to execute `~/.dotfiles/script/bootstrap` again.
+
+### iTerm2 configuration (optional)
+
+If you want to see iTerm2 as the image below you need to enable option 'Load preferences from a custom folder or URL:' in General Tab with path '~/.dotfiles/iterm2'
 
 ## Utilities installed
 - zsh

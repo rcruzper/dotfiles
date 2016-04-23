@@ -469,7 +469,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>1471 941 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>19 284 991 498 0 0 2560 1417 </string>
+	<string>36 305 865 402 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1308,7 +1308,7 @@
 			<key>Terminal Type</key>
 			<string>xterm</string>
 			<key>Thin Strokes</key>
-			<true/>
+			<integer>2</integer>
 			<key>Transparency</key>
 			<real>0.11924001802001477</real>
 			<key>Triggers</key>
@@ -1338,7 +1338,7 @@
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
 	<key>NoSyncLastTipTime</key>
-	<real>477734262.65785402</real>
+	<real>478860638.69576102</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1347,6 +1347,8 @@
 	<real>453192322.36986899</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>472807144.59456301</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -1366,6 +1368,65 @@
 		<string>0013</string>
 		<string>0014</string>
 		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0030</string>
+		<string>0031</string>
+		<string>0032</string>
+		<string>0033</string>
+		<string>0034</string>
+		<string>0035</string>
+		<string>0036</string>
+		<string>0037</string>
+		<string>0038</string>
+		<string>0039</string>
+		<string>0040</string>
+		<string>0041</string>
+		<string>0042</string>
+		<string>0043</string>
+		<string>0044</string>
+		<string>0045</string>
+		<string>0044</string>
+		<string>0045</string>
+		<string>0046</string>
+		<string>0047</string>
+		<string>0048</string>
+		<string>0049</string>
+		<string>0050</string>
+		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
+		<string>0064</string>
+		<string>0063</string>
+		<string>0063</string>
+		<string>0062</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -1433,7 +1494,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-21T07:57:41Z</date>
+	<date>2016-04-23T06:58:44Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -1483,6 +1544,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20160206</string>
+	<string>2.9.20160313</string>
 </dict>
 </plist>
