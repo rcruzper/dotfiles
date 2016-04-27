@@ -12,10 +12,11 @@ This is my set of configuration files to get ready in any new machine. If you wa
 
 ```terminal
 git clone --recursive git@github.com:rcruzper/dotfiles.git ~/.dotfiles
-~/.dotfiles/script/bootstrap
+cd ~/.dotfiles
+rake install
 ```
 
-If you want to update the configuration, you just need to execute `~/.dotfiles/script/bootstrap` again.
+If you want to update the configuration, you just need to execute `cd ~/.dotfiles && rake install` again.
 
 ### iTerm2 configuration (optional)
 
@@ -52,7 +53,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [x] ~~Brew link unlinked kegs~~
 - [x] ~~Add /usr/local/bin/zsh as default shell (chsh)~~
 - [x] ~~Input option to change gitconfig data~~
-- [x] ~~Split macos-linux options~~
+- [ ] Compatible with linux
 - [x] ~~Improve logs~~
 - [x] ~~Set requirements~~
 - [x] ~~Write description about the apps and scripts executed~~
@@ -61,9 +62,10 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [x] ~~Avoid password if brew permissions are correct~~
 - [ ] Uninstall script
 - [ ] Update zgen at bootstrap
-- [ ] Try to modularize installation script by component with logs on /tmp for issue tracking
 - [ ] Add tmux configuration
 - [ ] Add atom configuration
+- [ ] Add parameter to launch in quiet mode
+- [x] ~~Use ruby script instead of bash script to install dotfiles~~
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
