@@ -209,4 +209,4 @@ install_dotfiles
 install_brew
 install_brew_packages
 setup_zsh
-execute_docker_on_launch
+#execute_docker_on_launch

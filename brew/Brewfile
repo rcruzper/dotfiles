@@ -16,7 +16,6 @@ brew 'httpie'
 brew 'fzf'
 
 cask 'atom'
-cask 'dockertoolbox'
 cask 'libreoffice'
 cask 'sequel-pro'
 cask 'sts'
