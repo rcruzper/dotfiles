@@ -63,6 +63,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [ ] Update zgen at bootstrap
 - [ ] Try to modularize installation script by component with logs on /tmp for issue tracking
 - [ ] Add tmux configuration
+- [ ] Add atom configuration
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
