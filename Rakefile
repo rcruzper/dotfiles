@@ -5,6 +5,7 @@ require_relative 'install/git'
 require_relative 'install/zsh'
 require_relative 'install/symlink'
 require_relative 'install/zgen'
+require_relative 'install/atom'
 
 task :default => :install
 
@@ -18,6 +19,7 @@ task :install do
     brew_install
     zsh_setup
     zgen_setup
+    atom_setup(currentDir)
 end
 
 desc 'Update repository'

@@ -61,8 +61,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [ ] Uninstall script
 - [x] ~~Update zgen at bootstrap~~
 - [ ] Add tmux configuration
-- [ ] Add atom configuration
-- [ ] Add parameter to launch in quiet mode
+- [x] ~~Add atom configuration~~
 - [x] ~~Use ruby script instead of bash script to install dotfiles~~
 
 ## Bugs

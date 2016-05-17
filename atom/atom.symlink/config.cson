@@ -1,0 +1,16 @@
+"*":
+  core: {}
+  editor:
+    invisibles: {}
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "575e53ab-cd83-374e-500e-493baf60af65"
+  "file-icons":
+    coloured: false
+    onChanges: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    ignoreWhitespaceOnCurrentLine: false

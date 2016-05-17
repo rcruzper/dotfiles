@@ -1,0 +1,7 @@
+language-gradle
+autocomplete-java
+file-icons
+autoclose-html
+linter
+linter-javac
+linter-ruby
