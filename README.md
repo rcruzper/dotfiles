@@ -5,7 +5,7 @@
 This is my set of configuration files to get ready in any new machine. If you want to know more about dotfiles, see [dotfiles.github.io](https://dotfiles.github.io/).
 
 ## Requirements
-- [iTerm 2.9](https://iterm2.com/downloads/beta/iTerm2-2_9_20160313.zip)
+- [iTerm 2.9](https://iterm2.com/downloads/beta/iTerm2-2_9_20160510.zip)
 - User password is required to fix brew permissions and add zsh as default shell
 
 ## Installation
@@ -37,7 +37,6 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [httpie](https://github.com/jkbrzt/httpie) - Command line HTTP client.
 - [fzf](https://github.com/junegunn/fzf) - A general-purpose command-line fuzzy finder.
 - atom
-- dockertoolbox
 - libreoffice
 - sequel-pro
 - sts
@@ -53,7 +52,6 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [x] ~~Brew link unlinked kegs~~
 - [x] ~~Add /usr/local/bin/zsh as default shell (chsh)~~
 - [x] ~~Input option to change gitconfig data~~
-- [ ] Compatible with linux
 - [x] ~~Improve logs~~
 - [x] ~~Set requirements~~
 - [x] ~~Write description about the apps and scripts executed~~
@@ -61,7 +59,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [x] ~~Update script~~
 - [x] ~~Avoid password if brew permissions are correct~~
 - [ ] Uninstall script
-- [ ] Update zgen at bootstrap
+- [x] ~~Update zgen at bootstrap~~
 - [ ] Add tmux configuration
 - [ ] Add atom configuration
 - [ ] Add parameter to launch in quiet mode

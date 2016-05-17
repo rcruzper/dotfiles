@@ -4,6 +4,7 @@ require_relative 'install/brew'
 require_relative 'install/git'
 require_relative 'install/zsh'
 require_relative 'install/symlink'
+require_relative 'install/zgen'
 
 task :default => :install
 
@@ -16,6 +17,7 @@ task :install do
     git_config(currentDir)
     brew_install
     zsh_setup
+    zgen_setup
 end
 
 desc 'Update repository'
