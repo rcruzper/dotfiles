@@ -45,10 +45,13 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 ## TODO
 - [ ] Demo gif
 - [ ] List of more used commands
+- [ ] Uninstall script
+- [ ] Add tmux configuration
+- [ ] Add selectable list for brew packages
+- [x] ~~Add osx configuration~~
 - [x] ~~How to install~~
 - [x] ~~Fix permissions for homebrew before installation~~
 - [x] ~~Update brew if it is already installed~~
-- [ ] Add selectable list for brew packages
 - [x] ~~Brew link unlinked kegs~~
 - [x] ~~Add /usr/local/bin/zsh as default shell (chsh)~~
 - [x] ~~Input option to change gitconfig data~~
@@ -58,9 +61,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [x] ~~Docker execution at startup optional~~
 - [x] ~~Update script~~
 - [x] ~~Avoid password if brew permissions are correct~~
-- [ ] Uninstall script
 - [x] ~~Update zgen at bootstrap~~
-- [ ] Add tmux configuration
 - [x] ~~Add atom configuration~~
 - [x] ~~Use ruby script instead of bash script to install dotfiles~~
 

@@ -6,6 +6,7 @@ require_relative 'install/zsh'
 require_relative 'install/symlink'
 require_relative 'install/zgen'
 require_relative 'install/atom'
+require_relative 'install/osx'
 
 task :default => :install
 
@@ -14,6 +15,7 @@ task :install do
     currentDir = File.dirname(__FILE__)
     `cd #{currentDir}`
 
+    osx_setup
     symlink_install
     git_config(currentDir)
     brew_install
