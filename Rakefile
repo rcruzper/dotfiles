@@ -1,36 +1,38 @@
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/install'
 require 'rake'
-require_relative 'install/tools/logging'
-require_relative 'install/brew'
-require_relative 'install/git'
-require_relative 'install/zsh'
-require_relative 'install/symlink'
-require_relative 'install/zgen'
-require_relative 'install/atom'
-require_relative 'install/osx'
+require 'tools/logging'
+require 'tools/command'
+require 'brew'
+require 'git'
+require 'zsh'
+require 'symlink'
+require 'zgen'
+require 'atom'
+require 'osx'
 
 task :default => :install
 
 desc 'Install dotfiles'
 task :install do
-    currentDir = File.dirname(__FILE__)
-    `cd #{currentDir}`
+  dotfiles_home = File.dirname(__FILE__)
+  Dir.chdir dotfiles_home
 
-    osx_setup
-    symlink_install
-    git_config(currentDir)
-    brew_install
-    zsh_setup
-    zgen_setup
-    atom_setup(currentDir)
+  Osx.setup
+  Git.config dotfiles_home
+  Symlink.install
+  Brew.install
+  Zsh.setup
+  Zgen.update
+  Atom.setup dotfiles_home
 end
 
 desc 'Update repository'
 task :update do
-    currentDir = File.dirname(__FILE__)
-    `cd #{currentDir}`
+  dotfiles_home = File.dirname(__FILE__)
+  Dir.chdir dotfiles_home
 
-    info 'Updating dotfiles'
-    execute('git pull')
-    execute('git submodule update --init --recursive')
-    success 'Updating dotfiles'
+  Log.info 'Updating dotfiles'
+  Command.execute('git pull')
+  Command.execute('git submodule update --init --recursive')
+  Log.success 'Updating dotfiles'
 end

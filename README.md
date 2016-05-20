@@ -48,6 +48,8 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [ ] Uninstall script
 - [ ] Add tmux configuration
 - [ ] Add selectable list for brew packages
+- [ ] Add brew bundle check to avoid installation if not required
+- [x] ~~Migrate ruby scripts to ruby modules~~
 - [x] ~~Add osx configuration~~
 - [x] ~~How to install~~
 - [x] ~~Fix permissions for homebrew before installation~~

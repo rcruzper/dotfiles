@@ -1,16 +1,22 @@
-require_relative 'tools/logging'
-require_relative 'tools/utils'
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/tools'
+require 'logging'
+require 'command'
 
-def zsh_setup
+module Zsh
+  module_function
+
+  def setup
     if ENV['SHELL'] != "/usr/local/bin/zsh" then
-        info 'Setting up zsh as default shell'
+      Log.info 'Setting up zsh as default shell'
 
-        if File.foreach('/etc/shells').grep(/\/usr\/local\/bin\/zsh/).size == 0 then
-            execute 'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells'
-        end
+      if File.foreach('/etc/shells').grep(/\/usr\/local\/bin\/zsh/).size == 0 then
+        Command.execute 'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells'
+      end
 
-        execute 'sudo chsh -s "/usr/local/bin/zsh" "$(whoami)"'
+      Command.execute 'sudo chsh -s "/usr/local/bin/zsh" "$(whoami)"'
 
-        success 'Setting up zsh as default shell'
+      Log.success 'Setting up zsh as default shell'
     end
+  end
+
 end

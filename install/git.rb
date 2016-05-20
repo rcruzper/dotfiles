@@ -1,19 +1,24 @@
-require_relative 'tools/logging'
-require_relative 'tools/utils'
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/tools'
+require 'logging'
 
-def git_config(currentDir)
-    unless File.exists?(currentDir + '/git/gitconfig.local.symlink') then
-        info 'Setting up gitconfig'
+module Git
+  module_function
 
-        user ' - What is your github author name? '
-        gitAuthorName = gets.chomp
-        user ' - What is your github author email? '
-        gitAuthorEmail = gets.chomp
+  def config dotfiles_home
+    unless File.exists?(dotfiles_home + '/git/gitconfig.local.symlink') then
+      Log.info 'Setting up gitconfig'
 
-        gitconfigExampleFile = File.read('git/gitconfig.local.symlink.example')
-        gitconfigFile = File.new('git/gitconfig.local.symlink', 'w')
-        gitconfigFile.puts(gitconfigExampleFile.gsub(/AUTHORNAME/, gitAuthorName).gsub(/AUTHOREMAIL/, gitAuthorEmail))
+      Log.user ' - What is your git author name? '
+      git_author_name = STDIN.gets.chomp
+      Log.user ' - What is your git author email? '
+      git_author_email = STDIN.gets.chomp
 
-        success 'Setting up gitconfig'
+      gitconfig_example_file = File.read('git/gitconfig.local.symlink.example')
+      gitconfig_file = File.new('git/gitconfig.local.symlink', 'w')
+      gitconfig_file.puts(gitconfig_example_file.gsub(/AUTHORNAME/, git_author_name).gsub(/AUTHOREMAIL/, git_author_email))
+
+      Log.success 'Setting up gitconfig'
     end
+  end
+
 end

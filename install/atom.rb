@@ -1,9 +1,15 @@
-require_relative 'tools/logging'
-require_relative 'tools/utils'
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/tools'
+require 'logging'
+require 'command'
 
-def atom_setup(currentDir)
-    info 'Installing atom packages'
-    execute "apm install --packages-file #{currentDir}/atom/package-list.txt"
-    execute 'apm upgrade'
-    success 'Installing atom packages'
+module Atom
+  module_function
+
+  def setup dotfilesHome
+    Log.info 'Installing atom packages'
+    Command.execute "apm install --packages-file #{dotfilesHome}/atom/package-list.txt"
+    Command.execute 'apm upgrade'
+    Log.success 'Installing atom packages'
+  end
+
 end

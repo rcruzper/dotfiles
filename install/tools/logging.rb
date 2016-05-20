@@ -1,4 +1,6 @@
-module Tty extend self
+module Tty
+  module_function
+
   def blue; bold 34; end
   def white; bold 39; end
   def yellow; bold 33; end
@@ -18,18 +20,22 @@ class Array
   end
 end
 
-def info *args
+module Log
+  module_function
+
+  def info *args
     puts "[ #{Tty.blue}..#{Tty.white} ] #{args.shell_s}#{Tty.reset}"
-end
+  end
 
-def user *args
+  def user *args
     print "[ #{Tty.yellow}??#{Tty.white} ] #{args.shell_s}#{Tty.reset}"
-end
+  end
 
-def success *args
+  def success *args
     puts "[ #{Tty.green}OK#{Tty.white} ] #{args.shell_s}#{Tty.reset}"
-end
+  end
 
-def fail *args
+  def fail *args
     abort "[ #{Tty.red}KO#{Tty.white} ] #{args.shell_s}#{Tty.reset}"
+  end
 end
