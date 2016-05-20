@@ -1,5 +1,6 @@
 language-gradle
 autocomplete-java
+autocomplete-ruby
 file-icons
 autoclose-html
 linter

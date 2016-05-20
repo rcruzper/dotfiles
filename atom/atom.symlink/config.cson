@@ -14,3 +14,9 @@
   whitespace:
     ensureSingleTrailingNewline: false
     ignoreWhitespaceOnCurrentLine: false
+".erb.html.text":
+  editor:
+    tabLength: 4
+".ruby.source":
+  editor:
+    tabLength: 2
