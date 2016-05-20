@@ -2,6 +2,7 @@
 " 01. General                "
 """"""""""""""""""""""""""""""
 set nocompatible
+let g:netrw_dirhistmax = 0
 
 """"""""""""""""""""""""""""""
 " 02. Events                 "
