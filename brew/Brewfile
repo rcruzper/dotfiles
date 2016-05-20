@@ -20,4 +20,4 @@ cask 'libreoffice'
 cask 'sequel-pro'
 cask 'sts'
 cask 'font-fira-mono'
-
+cask 'font-meslo-lg'
