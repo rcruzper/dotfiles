@@ -14,6 +14,8 @@ brew 'tree'
 brew 'python'
 brew 'httpie'
 brew 'fzf'
+brew 'htop'
+brew 'the_silver_searcher'
 
 cask 'atom'
 cask 'libreoffice'
