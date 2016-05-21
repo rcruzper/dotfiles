@@ -29,13 +29,20 @@ module Brew
         Command.execute 'brew cask cleanup'
         Log.success 'Cleaning up old formulaes'
 
-        Log.info 'Installing homebrew packages'
-        Dir.chdir 'brew'
-        Command.execute 'brew bundle'
-        Dir.chdir '..'
-        Log.success 'Installing homebrew packages'
+        brew_bundle
       end
     end
+  end
+
+  def brew_bundle
+    Dir.chdir 'brew'
+    brew_bundle_check = `brew bundle check`
+    if brew_bundle_check.chomp != 'The Brewfile\'s dependencies are satisfied.'
+      Log.info 'Installing homebrew packages'
+      Command.execute 'brew bundle'
+      Log.success 'Installing homebrew packages'
+    end
+    Dir.chdir '..'
   end
 
   def fix_permissions
