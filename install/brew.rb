@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/tools'
 require 'logging'
 require 'command'
+require 'open3'
 
 module Brew
   module_function
@@ -57,9 +58,8 @@ module Brew
   end
 
   def link_unlinked_formulaes
-    #execute('brew list -1 | while read line; do brew unlink $line; brew link --overwrite --force $line; done')
-    Command.execute 'brew doctor &> brew_doctor.log'
-    File.readlines('brew_doctor.log', "\n\n").map{ |s| s.rstrip.split("\n") }.each do |paragraph|
+    brew_doctor = `brew doctor 2>&1`
+    brew_doctor.split(/\n\n/).map{ |s| s.rstrip.split("\n") }.each do |paragraph|
       if paragraph.include? 'Warning: You have unlinked kegs in your Cellar'
         Log.info 'Relinking unlinked formulaes'
         paragraph.each do |line|
@@ -71,7 +71,6 @@ module Brew
         break
       end
     end
-    Command.execute 'rm brew_doctor.log'
   end
 
 end
