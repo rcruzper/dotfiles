@@ -40,7 +40,7 @@ module Brew
     brew_bundle_check = `brew bundle check`
     if brew_bundle_check.chomp != 'The Brewfile\'s dependencies are satisfied.'
       Log.info 'Installing homebrew packages'
-      Command.execute 'brew bundle'
+      Command.execute 'brew bundle install -v'
       Log.success 'Installing homebrew packages'
     end
     Dir.chdir '..'
