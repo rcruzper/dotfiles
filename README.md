@@ -43,6 +43,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [font-fira-mono](https://www.fontsquirrel.com/fonts/fira-mono)
 - [htop](http://hisham.hm/htop/) - A top replacement
 - [ag](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to ack, with a focus on speed.
+- vim
 
 ## TODO
 - [ ] Demo gif
