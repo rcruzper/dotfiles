@@ -22,6 +22,17 @@ module Osx
     Command.execute 'defaults write com.apple.LaunchServices LSQuarantine -bool false'
 
     ###############################################################################
+    # Keyboard                                                                    #
+    ###############################################################################
+
+    # Disable press-and-hold for keys in favor of key repeat.
+    Command.execute 'defaults write -g ApplePressAndHoldEnabled -bool false'
+
+    # Set a really fast key repeat.
+    Command.execute 'defaults write NSGlobalDomain KeyRepeat -int 2'
+    Command.execute 'defaults write NSGlobalDomain InitialKeyRepeat -int 25'
+
+    ###############################################################################
     # Finder                                                                      #
     ###############################################################################
 
