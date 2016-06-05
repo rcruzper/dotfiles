@@ -3,6 +3,7 @@
 """"""""""""""""""""""""""""""
 set nocompatible
 let g:netrw_dirhistmax = 0
+set backspace=2
 
 """"""""""""""""""""""""""""""
 " 02. Events                 "

@@ -24,7 +24,7 @@ if ! zgen saved; then
 
     zgen load zsh-users/zsh-completions src
 
-    # Docker aliases
+    # My plugins
     zgen load rcruzper/zsh-docker-aliases
     zgen load rcruzper/zsh-git-plugin
 
