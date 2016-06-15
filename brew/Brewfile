@@ -2,7 +2,8 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/fonts'
 
-brew 'java'
+cask 'java'
+
 brew 'vim'
 brew 'git'
 brew 'node'
