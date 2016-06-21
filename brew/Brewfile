@@ -20,6 +20,7 @@ brew 'fzf'
 brew 'htop'
 brew 'the_silver_searcher'
 brew 'direnv'
+brew 'emp'
 
 cask 'atom'
 cask 'libreoffice'
