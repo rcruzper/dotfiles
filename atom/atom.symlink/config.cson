@@ -9,6 +9,7 @@
   "file-icons":
     coloured: false
     onChanges: true
+  gist: {}
   linter: {}
   welcome:
     showOnStartup: false
