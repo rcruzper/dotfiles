@@ -29,4 +29,5 @@ cask 'font-fira-mono'
 cask 'font-meslo-lg'
 cask 'kitematic'
 cask 'trailer'
+cask 'fliqlo'
 
