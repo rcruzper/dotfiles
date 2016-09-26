@@ -71,6 +71,15 @@ module Osx
     # Dock, Dashboard, and hot corners                                            #
     ###############################################################################
 
+    # Set dock pop-in delay to 0
+    Command.execute 'defaults write com.apple.dock autohide-time-modifier -int 0'
+
+    # Set dock position on the left of the screen
+    Command.execute 'defaults write com.apple.Dock orientation -string left'
+
+    # Remove the Delay for Auto-Hide & Auto-Show of Dock
+    Command.execute 'defaults write com.apple.Dock autohide-delay -float 0'
+
     # Minimize windows into their application’s icon
     Command.execute 'defaults write com.apple.dock minimize-to-application -bool true'
 

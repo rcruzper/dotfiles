@@ -13,8 +13,6 @@ module Brew
         Command.execute 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
         Log.success 'Installing brew'
       else
-        fix_permissions
-
         Log.info 'Updating brew'
         Command.execute 'brew update'
         Log.success 'Updating brew'
