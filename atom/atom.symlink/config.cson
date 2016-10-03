@@ -22,6 +22,6 @@
 ".ruby.source":
   editor:
     tabLength: 2
-".yaml.source":
+".source.yaml":
   editor:
     tabLength: 2
