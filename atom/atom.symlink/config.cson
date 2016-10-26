@@ -1,5 +1,6 @@
 "*":
-  core: {}
+  core:
+    telemetryConsent: "limited"
   editor:
     invisibles: {}
     tabLength: 4

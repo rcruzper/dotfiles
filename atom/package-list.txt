@@ -7,3 +7,4 @@ linter
 linter-javac
 linter-ruby
 gist
+atom-jinja2
