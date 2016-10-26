@@ -6,30 +6,30 @@ source ~/.dotfiles/zgen/zgen.zsh
 if ! zgen saved; then
     echo "Creating a zgen save"
 
+    # Oh-my-zsh plugins
     zgen oh-my-zsh
-
     zgen oh-my-zsh plugins/git
     zgen oh-my-zsh plugins/gitignore
     zgen oh-my-zsh plugins/git-extras
     zgen oh-my-zsh plugins/z
-    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/brew-cask
     zgen oh-my-zsh plugins/osx
     zgen oh-my-zsh plugins/command-not-found
     zgen oh-my-zsh plugins/mvn
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/gradle
     zgen oh-my-zsh plugins/httpie
-    zgen load zsh-users/zsh-syntax-highlighting
-
-    zgen load zsh-users/zsh-completions src
+    zgen oh-my-zsh plugins/kubectl
 
     # My plugins
-    zgen load rcruzper/zsh-docker-aliases
     zgen load rcruzper/zsh-git-plugin
 
     # Theme
     zgen load oskarkrawczyk/honukai-iterm-zsh honukai
+
+    # Zsh-users plugins
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-autosuggestions
 
     zgen save
 fi
@@ -40,5 +40,3 @@ export EDITOR='vim'
 source /usr/local/share/zsh/site-functions/_aws
 
 eval "$(direnv hook zsh)"
-#test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-
