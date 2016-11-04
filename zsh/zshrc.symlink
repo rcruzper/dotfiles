@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+export ZGEN_AUTOLOAD_COMPINIT=0
+
 # Load zgen
 source ~/.dotfiles/zgen/zgen.zsh
 
