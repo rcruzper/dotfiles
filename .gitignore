@@ -1,3 +1,4 @@
 .zshrc.swp
 git/gitconfig.local.symlink
 atom/atom.symlink/gist.token
+vim/vim.symlink/plugged

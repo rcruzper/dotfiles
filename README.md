@@ -44,6 +44,10 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [htop](http://hisham.hm/htop/) - A top replacement
 - [ag](https://github.com/ggreer/the_silver_searcher) - A code searching tool similar to ack, with a focus on speed.
 - vim
+    - [vim-plug](https://github.com/junegunn/vim-plug) - A minimalist Vim plugin manager.
+    - [vim-airline](https://github.com/vim-airline/vim-airline)
+    - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+    - [NERDtree](https://github.com/scrooloose/nerdtree)
 - ansible
 - awscli
 - awsebcli

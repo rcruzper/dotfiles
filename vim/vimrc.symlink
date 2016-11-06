@@ -1,32 +1,44 @@
 """"""""""""""""""""""""""""""
-" 01. General                "
+" Plugins                    "
+""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+call plug#end()
+
+""""""""""""""""""""""""""""""
+" Airline                    "
+""""""""""""""""""""""""""""""
+set laststatus=2
+
+""""""""""""""""""""""""""""""
+" General                    "
 """"""""""""""""""""""""""""""
 set nocompatible
 let g:netrw_dirhistmax = 0
 set backspace=2
 
 """"""""""""""""""""""""""""""
-" 02. Events                 "
-""""""""""""""""""""""""""""""
-filetype plugin indent on
-
-""""""""""""""""""""""""""""""
-" 03. Theme/Colors           "
+" Theme/Colorsi              "
 """"""""""""""""""""""""""""""
 set t_Co=8
-syntax enable
 
 """"""""""""""""""""""""""""""
-" 04. Vim UI                 "
+" Vim UI                     "
 """"""""""""""""""""""""""""""
 set number
 set ignorecase
 set ruler
-"set numberwidth=6
 
 """"""""""""""""""""""""""""""
-" 05. Text Formatting/Layout "
+" Text Formatting/Layout     "
 """"""""""""""""""""""""""""""
+syntax on
+filetype on
+filetype indent on
+filetype plugin on
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -35,3 +47,4 @@ set shiftwidth=4
 " yaml indentitation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
