@@ -1,6 +1,5 @@
 language-gradle
 autocomplete-java
-autocomplete-ruby
 file-icons
 autoclose-html
 linter
@@ -8,3 +7,4 @@ linter-javac
 linter-ruby
 gist
 atom-jinja2
+language-docker

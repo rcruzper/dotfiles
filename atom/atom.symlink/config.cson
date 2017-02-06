@@ -20,6 +20,9 @@
 ".erb.html.text":
   editor:
     tabLength: 4
+".groovy.source":
+  editor:
+    tabLength: 4
 ".ruby.source":
   editor:
     tabLength: 2
