@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-export ZGEN_AUTOLOAD_COMPINIT=0
-
 # Load zgen
 source ~/.dotfiles/zgen/zgen.zsh
 
@@ -36,9 +34,15 @@ if ! zgen saved; then
     zgen save
 fi
 
+# Alias
+alias k=kubectl
+
 # Shell
 export EDITOR='vim'
 
 source /usr/local/share/zsh/site-functions/_aws
 
 eval "$(direnv hook zsh)"
+
+# added by travis gem
+[ -f /Users/raulcruz/.travis/travis.sh ] && source /Users/raulcruz/.travis/travis.sh
