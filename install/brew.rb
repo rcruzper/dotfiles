@@ -12,6 +12,14 @@ module Brew
         Log.info 'Installing brew'
         Command.execute 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
         Log.success 'Installing brew'
+
+        Log.info 'Install zsh'
+        Command.execute 'brew cask install zsh'
+        Log.success 'Install zsh'
+
+        Log.info 'Install iterm2'
+        Command.execute 'brew cask install iterm2'
+        Log.success 'Install iterm2'
       else
         Log.info 'Updating brew'
         Command.execute 'brew update'
