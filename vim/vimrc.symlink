@@ -1,29 +1,21 @@
 """"""""""""""""""""""""""""""
-" Plugins                    "
-""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-call plug#end()
-
-""""""""""""""""""""""""""""""
-" Airline                    "
-""""""""""""""""""""""""""""""
-set laststatus=2
-
-""""""""""""""""""""""""""""""
 " General                    "
 """"""""""""""""""""""""""""""
 set nocompatible
 let g:netrw_dirhistmax = 0
 set backspace=2
+let mapleader = ","
 
 """"""""""""""""""""""""""""""
-" Theme/Colorsi              "
+" Plugins                    "
 """"""""""""""""""""""""""""""
-set t_Co=8
+source ~/.vim/plug.vim
+
+""""""""""""""""""""""""""""""
+" Themes/Colors               "
+""""""""""""""""""""""""""""""
+set t_Co=256
+colorscheme base16-default-dark
 
 """"""""""""""""""""""""""""""
 " Vim UI                     "
@@ -31,6 +23,8 @@ set t_Co=8
 set number
 set ignorecase
 set ruler
+set noshowmode
+set laststatus=2
 
 """"""""""""""""""""""""""""""
 " Text Formatting/Layout     "
@@ -43,8 +37,15 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" disable autocommenting in new lines
+set formatoptions=ql
 
 " yaml indentitation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 au FileType json setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+""""""""""""""""""""""""""""""
+" Mappings                   "
+""""""""""""""""""""""""""""""
+nmap <silent> <Leader>f :FixWhitespace<CR>
 
