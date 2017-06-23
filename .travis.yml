@@ -1,3 +1,2 @@
 os: osx
 script: "rake install"
-language: ruby
