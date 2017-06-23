@@ -1,1 +1,2 @@
 os: osx
+script: "rake install"
