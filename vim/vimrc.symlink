@@ -14,8 +14,8 @@ source ~/.vim/plug.vim
 """"""""""""""""""""""""""""""
 " Themes/Colors               "
 """"""""""""""""""""""""""""""
-set t_Co=256
-colorscheme base16-default-dark
+" set t_Co=256
+" colorscheme base16-default-dark
 
 """"""""""""""""""""""""""""""
 " Vim UI                     "
