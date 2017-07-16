@@ -6,7 +6,7 @@ require 'brew'
 require 'git'
 require 'zsh'
 require 'symlink'
-require 'zgen'
+require 'zplug'
 require 'atom'
 require 'osx'
 require 'vim'
@@ -23,7 +23,7 @@ task :install do
   Symlink.install
   Brew.install
   Zsh.setup
-  Zgen.update
+  Zplug.install
   Vim.update
   Atom.setup dotfiles_home
 end

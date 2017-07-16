@@ -1,48 +1,36 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
-# Load zgen
-source ~/.dotfiles/zgen/zgen.zsh
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
-if ! zgen saved; then
-    echo "Creating a zgen save"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/z", from:oh-my-zsh
+zplug "plugins/mvn", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh, lazy:true
+zplug "plugins/kubectl", from:oh-my-zsh
+zplug "djui/alias-tips"
+zplug "rcruzper/zsh-git-plugin"
 
-    # Oh-my-zsh plugins
-    zgen oh-my-zsh
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/gitignore
-    zgen oh-my-zsh plugins/git-extras
-    zgen oh-my-zsh plugins/z
-    zgen oh-my-zsh plugins/osx
-    zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/mvn
-    zgen oh-my-zsh plugins/docker
-    zgen oh-my-zsh plugins/gradle
-    zgen oh-my-zsh plugins/httpie
-    zgen oh-my-zsh plugins/kubectl
+zplug "lib/completion", from:oh-my-zsh, defer:0
+zplug "zsh-users/zsh-syntax-highlighting", defer:1
+zplug "zsh-users/zsh-history-substring-search", defer:2
 
-    # My plugins
-    zgen load rcruzper/zsh-git-plugin
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-    # Theme
-    zgen load oskarkrawczyk/honukai-iterm-zsh honukai
-
-    # Zsh-users plugins
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-completions src
-    zgen load zsh-users/zsh-autosuggestions
-
-    zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
-# Alias
-alias k=kubectl
+# Then, source plugins and add commands to $PATH
+zplug load
 
-# Shell
-export EDITOR='vim'
+# Sources
+source ~/.dotfiles/zsh/key-bindings.zsh
+source ~/.dotfiles/zsh/aliases.zsh
 
-source /usr/local/share/zsh/site-functions/_aws
-
-eval "$(direnv hook zsh)"
-
-# added by travis gem
-[ -f /Users/raulcruz/.travis/travis.sh ] && source /Users/raulcruz/.travis/travis.sh
