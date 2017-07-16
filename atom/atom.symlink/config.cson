@@ -12,6 +12,8 @@
     onChanges: true
   gist: {}
   linter: {}
+  "linter-ui-default":
+    panelHeight: 69
   welcome:
     showOnStartup: false
   whitespace:
