@@ -27,14 +27,3 @@ task :install do
   Vim.update
   Atom.setup dotfiles_home
 end
-
-desc 'Update repository'
-task :update do
-  dotfiles_home = File.dirname(__FILE__)
-  Dir.chdir dotfiles_home
-
-  Log.info 'Updating dotfiles'
-  Command.execute('git pull')
-  Command.execute('git submodule update --init --recursive')
-  Log.success 'Updating dotfiles'
-end
