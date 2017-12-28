@@ -1,8 +1,11 @@
 "*":
+  "asciidoc-preview":
+    tocType: "macro"
   core:
     telemetryConsent: "limited"
   editor:
     invisibles: {}
+    softWrap: true
     tabLength: 4
     tabType: "soft"
   "exception-reporting":
