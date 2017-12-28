@@ -57,12 +57,12 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [dps](https://github.com/rcruzper/dps)
 
 ## TODO
+- [ ] Add export LANG=en_US.UTF-8 on the installation to avoid zplug issues with special characters
 - [ ] Zplug needs to be installed after a reboot of iTerm, I need to find out a solution to this
 - [ ] Document new theme colors (https://github.com/sindresorhus/iterm2-snazzy)
 - [ ] Remove all vim colorscheme references
 - [ ] Install zplug (brew or curl?)
 - [ ] Remove all zgen references
-
 - [ ] Demo gif
 - [ ] List of more used commands
 - [ ] Uninstall script
