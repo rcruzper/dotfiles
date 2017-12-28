@@ -67,6 +67,10 @@ module Osx
     # Show the ~/Library folder
     Command.execute 'chflags nohidden ~/Library'
 
+    # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+    Command.execute '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+
     ###############################################################################
     # Dock, Dashboard, and hot corners                                            #
     ###############################################################################
