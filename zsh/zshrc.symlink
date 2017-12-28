@@ -8,7 +8,6 @@ zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/mvn", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh, lazy:true
-zplug "plugins/kubectl", from:oh-my-zsh
 zplug "djui/alias-tips"
 zplug "rcruzper/zsh-git-plugin"
 
@@ -34,3 +33,4 @@ zplug load
 source ~/.dotfiles/zsh/key-bindings.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
