@@ -1,5 +1,3 @@
 .zshrc.swp
 git/gitconfig.local.symlink
 atom/atom.symlink/gist.token
-vim/vim.symlink/plugged
-vim/vim.symlink/autoload/plug.vim.old

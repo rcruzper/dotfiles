@@ -13,10 +13,10 @@ This is my set of configuration files to get ready in any new machine. If you wa
 ```terminal
 git clone --recursive git@github.com:rcruzper/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-rake install
+scripts/bootstrap.sh
 ```
 
-If you want to update the configuration, you just need to execute `cd ~/.dotfiles && rake install` again.
+If you want to update the configuration, you just need to execute `cd ~/.dotfiles && scripts/bootstrap.sh` again.
 
 ### iTerm2 configuration (optional)
 
@@ -57,6 +57,7 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [dps](https://github.com/rcruzper/dps)
 
 ## TODO
+- [ ] Improve FZF_DEFAULT_OPTS
 - [ ] Remove plug.vim from repository and download on every installation
 - [ ] Add export LANG=en_US.UTF-8 on the installation to avoid zplug issues with special characters
 - [ ] Zplug needs to be installed after a reboot of iTerm, I need to find out a solution to this
