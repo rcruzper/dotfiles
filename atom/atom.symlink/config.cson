@@ -1,6 +1,8 @@
 "*":
   "asciidoc-preview":
     tocType: "macro"
+  "atom-package-deps":
+    ignored: []
   core:
     telemetryConsent: "limited"
   editor:
@@ -17,6 +19,8 @@
   linter: {}
   "linter-ui-default":
     panelHeight: 69
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:

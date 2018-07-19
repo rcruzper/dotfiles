@@ -8,6 +8,7 @@ export EDITOR='vim'
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export FZF_DEFAULT_OPTS="--height 40% --reverse --color bg+:240"
+export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='💡  Alias tip: '
+

@@ -1,9 +1,12 @@
 [include]
         path = ~/.gitconfig.local
 [push]
-        default = simple
+	    default = current
 [core]
 	    excludesfile = ~/.gitignore
         editor = vim
 [color]
         ui = auto
+[user]
+	    name = Raúl Cruz
+	    email = rcruz@abaenglish.com
