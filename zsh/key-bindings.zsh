@@ -8,4 +8,5 @@ bindkey '^[[H' beginning-of-line                    # [Fn-RightArrow] - move to
 bindkey '^[[F' end-of-line                          # [Fn-LeftArrow] - move to the end of the line
 bindkey '^[[3~' delete-char                         # [Fn-Delete] - delete the character under the cursor
 bindkey '^R' history-incremental-search-backward    # [Control-R] - search backward incrementally for a specified string
-bindkey 'ESC-^[[3~' backward-kill-word
+#bindkey 'ESC-^[[3~' backward-kill-word
+bindkey '^[[Z' reverse-menu-complete                # [Shift-TAB] - backward TAB in completions
