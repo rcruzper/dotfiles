@@ -1,10 +1,13 @@
 "*":
-  "asciidoc-preview":
-    tocType: "macro"
   "atom-package-deps":
     ignored: []
   core:
-    telemetryConsent: "limited"
+    disabledPackages: [
+      "github"
+      "background-tips"
+    ]
+    restorePreviousWindowsOnStart: "no"
+    telemetryConsent: "no"
   editor:
     invisibles: {}
     softWrap: true
@@ -15,10 +18,12 @@
   "file-icons":
     coloured: false
     onChanges: true
-  gist: {}
+  github:
+    graphicalConflictResolution: false
   linter: {}
   "linter-ui-default":
     panelHeight: 69
+    showPanel: true
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:

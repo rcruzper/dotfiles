@@ -22,6 +22,9 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Fix Mojave font for Non-Retina displays
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################

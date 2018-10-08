@@ -31,7 +31,6 @@ success 'Installing homebrew bundle packages'
 
 info 'Cleaning up old formulaes'
 brew cleanup -s
-brew cask cleanup
 success 'Cleaning up old formulaes'
 
 #TODO show brew doctor at the end
