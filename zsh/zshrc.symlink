@@ -1,39 +1,39 @@
 #!/usr/bin/env zsh
 
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+### Added by Zplugin's installer
+source '/Users/raulcruz/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
 
-zplug "zsh-users/zsh-autosuggestions"
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/z", from:oh-my-zsh
-zplug "plugins/mvn", from:oh-my-zsh
-zplug "plugins/kubectl", from:oh-my-zsh
-zplug "plugins/docker", from:oh-my-zsh
-zplug "djui/alias-tips"
-zplug "rcruzper/zsh-git-plugin"
+zplugin ice wait"0" blockf lucid
+zplugin light zsh-users/zsh-completions
 
-zplug "lib/completion", from:oh-my-zsh, defer:0
-zplug "zsh-users/zsh-syntax-highlighting", defer:1
-zplug "zsh-users/zsh-history-substring-search", defer:2
+zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/fast-syntax-highlighting
 
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
+zplugin light zsh-users/zsh-autosuggestions
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+#zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/history-search-multi-word
 
-# Then, source plugins and add commands to $PATH
-zplug load
+zplugin ice wait"0" atload"unalias grv" lucid
+zplugin snippet OMZ::plugins/git/git.plugin.zsh
+
+zplugin ice wait"0" lucid
+zplugin snippet OMZ::plugins/mvn/mvn.plugin.zsh
+
+zplugin ice wait"0" lucid
+zplugin snippet OMZ::lib/completion.zsh
+
+zplugin ice wait"0" lucid
+zplugin snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
+
+# Theme
+zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
 # Sources
 source ~/.dotfiles/zsh/key-bindings.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/functions.zsh
-
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
