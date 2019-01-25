@@ -21,14 +21,17 @@ zplugin light zdharma/history-search-multi-word
 zplugin ice wait"0" atload"unalias grv" lucid
 zplugin snippet OMZ::plugins/git/git.plugin.zsh
 
-zplugin ice wait"0" lucid
-zplugin snippet OMZ::plugins/mvn/mvn.plugin.zsh
+#zplugin ice wait"0" lucid
+#zplugin snippet OMZ::plugins/mvn/mvn.plugin.zsh
 
 zplugin ice wait"0" lucid
 zplugin snippet OMZ::lib/completion.zsh
 
 zplugin ice wait"0" lucid
 zplugin snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
+
+zplugin ice wait"0" lucid
+zplugin light djui/alias-tips
 
 # Theme
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
@@ -37,3 +40,4 @@ zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 source ~/.dotfiles/zsh/key-bindings.zsh
 source ~/.dotfiles/zsh/aliases.zsh
 source ~/.dotfiles/zsh/functions.zsh
+source /usr/local/etc/profile.d/z.sh

@@ -21,7 +21,8 @@ else
     brew update
     success 'Updating brew'
     info 'Upgrading brew formulaes'
-    brew upgrade
+    brew upgrade --ignore-pinned
+    brew cask upgrade intellij-idea
     success 'Upgrading brew formulaes'
 fi
 

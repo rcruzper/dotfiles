@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 set -e
 
@@ -32,9 +32,18 @@ then
 fi
 
 # Install zplug
-if [ ! -f /usr/local/opt/zplug/autoload/zplug ]
+if [ ! -f ~/.zplugin/bin/zplugin.zsh ]
 then
-    info 'Installing zplug'
-    zsh -c "curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh"
-    success 'Installing zplug'
+    info 'Installing zplugin'
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+    success 'Installing zplugin'
+else
+    # No consigo usar zplugin dentro de un script porque es una función
+    # info 'Updating zplugin'
+    #autoload gcheckout
+    #type gcheckout
+    #zsh -c "gcheckout"
+    #zsh -c "$(zplugin self-update)"
+    #zplugin update --all
+    #success 'Updating zplugin'
 fi
