@@ -59,7 +59,12 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 ## TODO
 - [ ] Update utilities installed
 - [ ] Add encrypted files for:
-    * ssh keys and config
+    - [ ] ssh keys and config
+    - [ ] docker config
+    - [ ] aws credentials
+    - [ ] maven settings
+    - [ ] Trailer settings
+- [ ] Install Alfred, license and workflows
 - [ ] Documentation of zsh loading
 - [ ] Improve FZF_DEFAULT_OPTS
 - [ ] Remove plug.vim from repository and download on every installation
