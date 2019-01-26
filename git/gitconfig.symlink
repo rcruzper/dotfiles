@@ -1,9 +1,9 @@
 [include]
         path = ~/.gitconfig.local
 [push]
-	    default = current
+	default = current
 [core]
-	    excludesfile = ~/.gitignore
+        excludesfile = ~/.gitignore
         editor = vim
 [color]
         ui = auto
