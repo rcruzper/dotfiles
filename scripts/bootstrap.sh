@@ -13,4 +13,3 @@ $DOTFILES_ROOT/brew/brew.sh
 $DOTFILES_ROOT/zsh/zsh.sh
 $DOTFILES_ROOT/scripts/symlink.sh
 $DOTFILES_ROOT/vim/vim.sh
-$DOTFILES_ROOT/atom/atom.sh
