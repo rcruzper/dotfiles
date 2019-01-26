@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
+
 ### Added by Zplugin's installer
 source '/Users/raulcruz/.zplugin/bin/zplugin.zsh'
 autoload -Uz _zplugin
@@ -36,8 +39,13 @@ zplugin light djui/alias-tips
 # Theme
 zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
 
-# Sources
-source ~/.dotfiles/zsh/key-bindings.zsh
-source ~/.dotfiles/zsh/aliases.zsh
-source ~/.dotfiles/zsh/functions.zsh
-source /usr/local/etc/profile.d/z.sh
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load all zsh in .dotfiles
+for file in ${(M)config_files:#*/*.zsh}
+do
+  source $file
+done
+
