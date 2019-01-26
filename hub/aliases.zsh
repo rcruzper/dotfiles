@@ -1,0 +1,1 @@
+alias pr='hub pull-request --no-edit'
