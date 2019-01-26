@@ -22,7 +22,8 @@ else
     success 'Updating brew'
     info 'Upgrading brew formulaes'
     brew upgrade --ignore-pinned
-    brew cask upgrade intellij-idea
+    # TODO: remove from here because if the intellij app is not installed, it fails
+    # brew cask upgrade intellij-idea
     success 'Upgrading brew formulaes'
 fi
 
