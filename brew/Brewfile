@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/fonts'
 tap 'rcruzper/homebrew-tools'
+tap 'jenkins-x/jx'
 
 cask 'java'
 
@@ -17,6 +18,8 @@ brew 'go'
 brew 'gradle'
 brew 'httpie'
 brew 'jmeter'
+brew 'jx'
+brew 'kops'
 brew 'kubectl'
 brew 'maven'
 brew 'node'
