@@ -33,8 +33,9 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Set a really fast key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 25
+# It is not working now
+#defaults write NSGlobalDomain KeyRepeat -int 2
+#defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 ###############################################################################
 # Finder                                                                      #
