@@ -57,38 +57,15 @@ If you want to see iTerm2 as the image below you need to enable option 'Load pre
 - [dps](https://github.com/rcruzper/dps)
 
 ## TODO
+- [ ] Update utilities installed
+- [ ] Add encrypted files for:
+    * ssh keys and config
+- [ ] Documentation of zsh loading
 - [ ] Improve FZF_DEFAULT_OPTS
 - [ ] Remove plug.vim from repository and download on every installation
-- [ ] Add export LANG=en_US.UTF-8 on the installation to avoid zplug issues with special characters
-- [ ] Zplug needs to be installed after a reboot of iTerm, I need to find out a solution to this
 - [ ] Document new theme colors (https://github.com/sindresorhus/iterm2-snazzy)
 - [ ] Remove all vim colorscheme references
-- [ ] Install zplug (brew or curl?)
-- [ ] Remove all zgen references
-- [ ] Demo gif
-- [ ] List of more used commands
-- [ ] Uninstall script
-- [ ] Add tmux configuration
 - [ ] Add selectable list for brew packages
-- [ ] Add all ssh keys from .ssh to ssh-agent
-- [x] ~~Add brew bundle check to avoid installation if not required~~
-- [x] ~~Migrate ruby scripts to ruby modules~~
-- [x] ~~Add osx configuration~~
-- [x] ~~How to install~~
-- [x] ~~Fix permissions for homebrew before installation~~
-- [x] ~~Update brew if it is already installed~~
-- [x] ~~Brew link unlinked kegs~~
-- [x] ~~Add /usr/local/bin/zsh as default shell (chsh)~~
-- [x] ~~Input option to change gitconfig data~~
-- [x] ~~Improve logs~~
-- [x] ~~Set requirements~~
-- [x] ~~Write description about the apps and scripts executed~~
-- [x] ~~Docker execution at startup optional~~
-- [x] ~~Update script~~
-- [x] ~~Avoid password if brew permissions are correct~~
-- [x] ~~Update zgen at bootstrap~~
-- [x] ~~Add atom configuration~~
-- [x] ~~Use ruby script instead of bash script to install dotfiles~~
 
 ## Bugs
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
