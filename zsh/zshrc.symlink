@@ -37,7 +37,8 @@ zplugin ice wait"0" lucid
 zplugin light djui/alias-tips
 
 # Theme
-zplugin ice pick"async.zsh" src"pure.zsh"; zplugin light sindresorhus/pure
+zplugin ice pick"async.zsh" src"pure.zsh"
+zplugin light sindresorhus/pure
 
 # all of our zsh files
 typeset -U config_files
@@ -48,4 +49,3 @@ for file in ${(M)config_files:#*/*.zsh}
 do
   source $file
 done
-
