@@ -12,3 +12,5 @@ export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='💡  Alias tip: '
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
