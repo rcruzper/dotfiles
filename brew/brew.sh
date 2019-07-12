@@ -31,8 +31,8 @@ info 'Installing homebrew bundle packages'
 brew bundle install -v --file=$DOTFILES_ROOT/brew/Brewfile
 success 'Installing homebrew bundle packages'
 
-info 'Cleaning up old formulaes'
-brew cleanup -s
-success 'Cleaning up old formulaes'
+#info 'Cleaning up old formulaes'
+#brew cleanup -s
+#success 'Cleaning up old formulaes'
 
 #TODO show brew doctor at the end
