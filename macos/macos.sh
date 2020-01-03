@@ -23,7 +23,7 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Fix Mojave font for Non-Retina displays
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+# defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 ###############################################################################
 # Keyboard                                                                    #
