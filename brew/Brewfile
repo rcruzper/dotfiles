@@ -36,6 +36,7 @@ brew 'zsh'
 
 cask 'alfred'
 cask 'docker'
+cask 'font-cascadia'
 cask 'font-fira-mono'
 cask 'font-fira-code'
 cask 'font-hack'
