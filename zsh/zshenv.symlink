@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
-
 export EDITOR='vim'
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

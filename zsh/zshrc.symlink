@@ -9,43 +9,51 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin's installer chunk
 
-zplugin ice wait"0" blockf lucid
-zplugin light zsh-users/zsh-completions
+zinit ice wait"0" blockf lucid
+zinit light zsh-users/zsh-completions
 
-zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/fast-syntax-highlighting
+zinit ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
 
-zplugin ice wait"0" atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions
 
-#zplugin ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/history-search-multi-word
+#zinit ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/history-search-multi-word
 
-zplugin ice wait"0" atload"unalias grv" lucid
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
+zinit ice wait"0" atload"unalias grv" lucid
+zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-#zplugin ice wait"0" lucid
-#zplugin snippet OMZ::plugins/mvn/mvn.plugin.zsh
+# zinit ice wait"0" lucid
+# zinit snippet OMZ::lib/completion.zsh
 
-zplugin ice wait"0" lucid
-zplugin snippet OMZ::lib/completion.zsh
+zinit ice wait"0" lucid
+zinit snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
 
-zplugin ice wait"0" lucid
-zplugin snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
+zinit ice wait"0" lucid
+zinit light djui/alias-tips
 
-zplugin ice wait"0" lucid
-zplugin light djui/alias-tips
+# zinit ice wait"0" lucid
+# zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
 
 # Theme
-zplugin ice pick"async.zsh" src"pure.zsh"
-zplugin light sindresorhus/pure
+zinit ice pick"async.zsh" src"pure.zsh"
+zinit light sindresorhus/pure
 
-# all of our zsh files
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+eval "$(direnv hook zsh)"
 
 # load all zsh in .dotfiles
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
 for file in ${(M)config_files:#*/*.zsh}
 do
   source $file
 done
+
+# override history settings from previous plugin
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=30000
+export SAVEHIST=30000
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
