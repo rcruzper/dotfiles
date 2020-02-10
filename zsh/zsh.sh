@@ -31,12 +31,12 @@ then
     fi
 fi
 
-# Install zplug
-if [ ! -f ~/.zplugin/bin/zplugin.zsh ]
+# Install zinit
+if [ ! -f ~/.zinit/bin/zinit.zsh ]
 then
-    info 'Installing zplugin'
-    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-    success 'Installing zplugin'
+    info 'Installing zinit'
+    zsh -c "$(sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")"
+    success 'Installing zinit'
 else
     # No consigo usar zplugin dentro de un script porque es una función
     # info 'Updating zplugin'

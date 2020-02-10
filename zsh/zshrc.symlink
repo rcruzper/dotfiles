@@ -1,46 +1,52 @@
-#!/usr/bin/env zsh
 
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f"
+fi
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit installer's chunk
 
-### Added by Zplugin's installer
-source '/Users/raulcruz/.zplugin/bin/zplugin.zsh'
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin's installer chunk
-
-zinit ice wait"0" blockf lucid
-zinit light zsh-users/zsh-completions
-
-zinit ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zinit light zdharma/fast-syntax-highlighting
-
-zinit ice wait"0" atload"_zsh_autosuggest_start" lucid
-zinit light zsh-users/zsh-autosuggestions
-
-#zinit ice wait"0" atinit"zpcompinit; zpcdreplay" lucid
-zinit light zdharma/history-search-multi-word
-
-zinit ice wait"0" atload"unalias grv" lucid
+zinit ice wait atload"unalias grv" lucid
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 
-# zinit ice wait"0" lucid
-# zinit snippet OMZ::lib/completion.zsh
+zstyle ':completion:*' menu select
+zinit ice wait blockf atpull'zinit creinstall -q .' lucid
+zinit light zsh-users/zsh-completions
 
 zinit ice wait"0" lucid
-zinit snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
-
-zinit ice wait"0" lucid
-zinit light djui/alias-tips
-
-# zinit ice wait"0" lucid
-# zinit snippet OMZ::plugins/kubectl/kubectl.plugin.zsh
+zinit load zdharma/history-search-multi-word
 
 # Theme
 zinit ice pick"async.zsh" src"pure.zsh"
 zinit light sindresorhus/pure
 
-eval "$(direnv hook zsh)"
+zinit ice wait"1" lucid
+zinit snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
+
+zinit ice wait"1" lucid
+zinit light djui/alias-tips
+
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+        direnv/direnv
+
+zinit ice as"completion"
+zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
+
+zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
+
+zinit ice wait atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions
+
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
 
 # load all zsh in .dotfiles
 typeset -U config_files
