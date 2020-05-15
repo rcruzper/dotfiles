@@ -1,1 +1,1 @@
-alias ls='ls -G'
+alias ls='ls -laG'
