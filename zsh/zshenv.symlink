@@ -12,3 +12,5 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export BAT_THEME="OneHalfDark"
+
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
