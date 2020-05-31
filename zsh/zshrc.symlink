@@ -23,7 +23,7 @@ zinit ice wait"0" lucid
 zinit load zdharma/history-search-multi-word
 
 # Theme
-zinit ice pick"async.zsh" src"pure.zsh"
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 zinit ice wait"1" lucid
