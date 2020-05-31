@@ -80,7 +80,7 @@ chflags nohidden ~/Library
 defaults write com.apple.dock autohide-time-modifier -int 0
 
 # Set dock position on the left of the screen
-defaults write com.apple.Dock orientation -string left
+defaults write com.apple.Dock orientation -string right
 
 # Remove the Delay for Auto-Hide & Auto-Show of Dock
 defaults write com.apple.Dock autohide-delay -float 0
