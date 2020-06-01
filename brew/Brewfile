@@ -1,6 +1,5 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/versions'
 tap 'rcruzper/homebrew-tools'
 tap 'jenkins-x/jx'
 
