@@ -6,11 +6,11 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 
-export ZSH_PLUGINS_ALIAS_TIPS_TEXT='💡  Alias tip: '
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 export BAT_THEME="OneHalfDark"
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+export LSCOLORS=GxFxCxDxBxegedabagaced
