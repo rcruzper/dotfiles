@@ -23,6 +23,12 @@ zinit ice wait"0" lucid
 zinit load zdharma/history-search-multi-word
 
 # Theme
+zstyle :prompt:pure:path color cyan
+zstyle :prompt:pure:execution_time color 208
+zstyle ':prompt:pure:prompt:*' color blue
+zstyle :prompt:pure:git:arrow color yellow
+zstyle :prompt:pure:git:dirty color grey
+
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
