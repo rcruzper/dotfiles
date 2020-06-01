@@ -38,12 +38,6 @@ then
     zsh -c "$(sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")"
     success 'Installing zinit'
 else
-    # No consigo usar zplugin dentro de un script porque es una función
-    # info 'Updating zplugin'
-    #autoload gcheckout
-    #type gcheckout
-    #zsh -c "gcheckout"
-    #zsh -c "$(zplugin self-update)"
-    #zplugin update --all
-    #success 'Updating zplugin'
+    info 'Zinit already installed'
+    # TODO: How can we upgrade zinit from bash?
 fi
