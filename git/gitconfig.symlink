@@ -1,9 +1,12 @@
 [include]
-        path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 [push]
 	default = current
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
+    excludesfile = ~/.gitignore
+    editor = vim
 [color]
-        ui = auto
+    ui = auto
+[pull]
+    rebase = false
+
