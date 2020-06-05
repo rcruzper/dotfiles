@@ -4,7 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Colorscheme
-Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 
 " Fancy statusline
 Plug 'vim-airline/vim-airline'
@@ -26,4 +26,3 @@ Plug 'scrooloose/nerdtree'
 Plug 'glench/vim-jinja2-syntax', { 'for': 'jinja' }
 Plug 'tpope/vim-git', { 'for': 'gitcommit' }
 call plug#end()
-

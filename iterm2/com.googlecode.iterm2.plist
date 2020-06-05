@@ -22,8 +22,6 @@
 	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
-	<key>CGFontRenderingFontSmoothingDisabled</key>
-	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -854,7 +852,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 396 770 429 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>196 104 1345 786 0 0 1920 1057 </string>
+	<string>49 57 1810 916 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 348 1610 1069 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_93197C38-633C-4B58-A3F4-8DC25218435A</key>
@@ -1059,13 +1057,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.41568627450980394</real>
+				<real>0.34064260125160217</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.33333333333333331</real>
+				<real>0.2652154266834259</real>
 				<key>Red Component</key>
-				<real>0.29803921568627451</real>
+				<real>0.23306176066398621</real>
 			</dict>
 			<key>Ansi 9 Color</key>
 			<dict>
@@ -1139,6 +1137,8 @@
 				<key>Red Component</key>
 				<real>0.90727746486663818</real>
 			</dict>
+			<key>Brighten Bold Text</key>
+			<false/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1827,7 +1827,7 @@
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
-			<false/>
+			<true/>
 			<key>Use Bright Bold</key>
 			<false/>
 			<key>Use Canonical Parser</key>
@@ -1837,6 +1837,10 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
+			<false/>
+			<key>Use Tab Color</key>
+			<false/>
+			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
@@ -1900,7 +1904,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6DCCC1C6-B05D-42CD-A37D-81182B6DE5DF</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>285</integer>
+	<integer>291</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2719,7 +2723,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-31T19:41:02Z</date>
+	<date>2020-06-02T08:41:50Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>

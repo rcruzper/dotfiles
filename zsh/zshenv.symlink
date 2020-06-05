@@ -9,8 +9,9 @@ export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export BAT_THEME="OneHalfDark"
+export BAT_THEME="Nord"
 
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
-export LSCOLORS=GxFxCxDxBxegedabagaced
+export LSCOLORS=Exgxcxdxbxegedabagacad
+
