@@ -63,9 +63,6 @@ do
 done
 
 # override history settings from previous plugin
-export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=30000
-export SAVEHIST=30000
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
