@@ -38,6 +38,8 @@ then
     zsh -c "$(sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)")"
     success 'Installing zinit'
 else
-    info 'Zinit already installed'
-    # TODO: How can we upgrade zinit from bash?
+    info 'Updating zinit'
+    zsh -i -c "zi self-update"
+    zsh -i -c "zi update"
+    success 'Updating zinit'
 fi
