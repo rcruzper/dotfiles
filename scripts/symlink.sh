@@ -2,10 +2,7 @@
 
 set -euo pipefail
 
-cd "$(dirname "$0")/.." > /dev/null
-DOTFILES_ROOT=$(pwd -P)
-
-. $DOTFILES_ROOT/scripts/tools/logging.sh --source-only
+source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
 info 'Installing symlinks'
 

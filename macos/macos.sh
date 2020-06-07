@@ -2,10 +2,7 @@
 
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
-DOTFILES_ROOT=$(pwd -P)
-
-. $DOTFILES_ROOT/scripts/tools/logging.sh --source-only
+source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
 info 'Setting up osx (It will restart Dock and Finder)'
 
