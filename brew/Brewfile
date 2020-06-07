@@ -38,6 +38,7 @@ brew 'z'
 brew 'zsh'
 
 cask 'alfred'
+cask 'dash'
 cask 'docker'
 cask 'font-cascadia'
 cask 'font-fira-mono'
