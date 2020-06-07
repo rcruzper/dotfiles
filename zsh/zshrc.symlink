@@ -38,10 +38,6 @@ zinit snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.z
 zinit ice wait"1" lucid
 zinit light djui/alias-tips
 
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-        direnv/direnv
-
 zinit ice as"completion"
 zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
