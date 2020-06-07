@@ -8,7 +8,7 @@ blue=$(tput setaf 4)
 reset=$(tput sgr0)
 
 function info() {
-    printf "[ ${blue}..${reset} ] %s" "$@"
+    printf "[ ${blue}..${reset} ] %s\n" "$@"
 }
 
 function success() {
@@ -16,5 +16,5 @@ function success() {
 }
 
 function user() {
-    printf "[ ${yellow}??${reset} ] %s" "$@"
+    printf "[ ${yellow}??${reset} ] %s\n" "$@"
 }
