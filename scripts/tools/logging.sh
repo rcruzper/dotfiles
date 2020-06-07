@@ -7,14 +7,14 @@ yellow=$(tput setaf 3)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 
-info() {
-    echo "[ ${blue}..${reset} ] " $@
+function info() {
+    printf "[ ${blue}..${reset} ] %s" "$@"
 }
 
-success() {
-    echo "[ ${green}OK${reset} ] " $@
+function success() {
+    printf "[ ${green}OK${reset} ] %s\n\n" "$@"
 }
 
-user() {
-    echo "[ ${yellow}??${reset} ] " $@
+function user() {
+    printf "[ ${yellow}??${reset} ] %s" "$@"
 }
