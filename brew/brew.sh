@@ -4,7 +4,7 @@ set -euo pipefail
 
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
-if [ ! $(command -v brew) ]
+if [ ! "$(command -v brew)" ]
 then
     info 'Installing brew'
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

@@ -5,7 +5,7 @@ set -euo pipefail
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
 # Install zsh
-if [ ! $(command -v zsh) ]
+if [ ! "$(command -v zsh)" ]
 then
     info 'Installing zsh'
     brew install zsh
@@ -13,9 +13,9 @@ then
 fi
 
 # Set zsh as default shell
-if [ -n $SHELL ]
+if [[ -n $SHELL ]]
 then
-    if [ $SHELL != "/usr/local/bin/zsh" ]
+    if [ "$SHELL" != "/usr/local/bin/zsh" ]
     then
         info 'Setting up zsh as default shell'
         if ! grep -q /usr/local/bin/zsh /etc/shells; then
