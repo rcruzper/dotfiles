@@ -12,8 +12,6 @@ export LANG=en_US.UTF-8
 
 export BAT_THEME="Nord"
 
-export LSCOLORS=Exgxcxdxbxegedabagacad
-
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=30000
 export SAVEHIST=30000
@@ -22,7 +20,6 @@ paths=(
   "$GOPATH/bin"
   "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
   "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
-#  "$PATH"
   "/usr/local/bin"
   "/usr/bin"
   "/usr/local/sbin"
@@ -37,3 +34,4 @@ PATH=$(
 )
 
 export PATH
+

@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " Colorscheme
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 " Fancy statusline
 Plug 'vim-airline/vim-airline'
