@@ -9,7 +9,7 @@ info 'Installing symlinks'
 for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink')
 do
 dst="$HOME/.$(basename "${src%.*}")"
-ln -sf "$src" "$dst"
+ln -snf "$src" "$dst"
 done
 
 success 'Installing symlinks'
