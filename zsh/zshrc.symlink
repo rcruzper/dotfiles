@@ -26,13 +26,10 @@ zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 
 zinit ice wait"1" lucid
-zinit snippet https://github.com/rcruzper/zsh-git-plugin/raw/master/git.plugin.zsh
+zinit light rcruzper/zsh-git-plugin
 
 zinit ice wait"1" lucid
 zinit light djui/alias-tips
-
-zinit ice as"completion"
-zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
 
 zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma/fast-syntax-highlighting
@@ -55,7 +52,6 @@ done
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/raulcruz/.sdkman"
