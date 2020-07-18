@@ -1,4 +1,5 @@
 .idea/
+.sdkmanrc
 
 # Created by https://www.toptal.com/developers/gitignore/api/java,macos,maven,intellij
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,macos,maven,intellij
