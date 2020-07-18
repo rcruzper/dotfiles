@@ -2,3 +2,4 @@
 git/gitconfig.local.symlink
 atom/atom.symlink/gist.token
 brew/Brewfile.lock.json
+sdkman.symlink/candidates
