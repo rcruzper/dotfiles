@@ -3,9 +3,6 @@ cask_args appdir: '/Applications'
 tap 'rcruzper/homebrew-tools'
 tap 'jenkins-x/jx'
 
-cask 'java8'
-cask 'java11'
-
 brew 'awscli'
 brew 'bash'
 brew 'bat'
