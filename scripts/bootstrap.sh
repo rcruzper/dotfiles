@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-cd "$(dirname "$0")/.." > /dev/null
+cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
 export DOTFILES_ROOT
