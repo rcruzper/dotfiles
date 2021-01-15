@@ -56,3 +56,6 @@ setopt EXTENDED_HISTORY
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/raulcruz/.sdkman"
 [[ -s "/Users/raulcruz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/raulcruz/.sdkman/bin/sdkman-init.sh"
+
+eval "$(direnv hook zsh)"
+
