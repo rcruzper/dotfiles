@@ -12,6 +12,10 @@ then
     # TODO How to install java after sdkman installation
     success 'Installing sdkman'
 else
+    info 'Flushing sdkman'
+    zsh -i -c "sdk flush"
+    zsh -i -c "sdk flush broadcast"
+    success 'Flushing sdkman'
     info 'Updating sdkman'
     zsh -i -c "sdk selfupdate"
     zsh -i -c "sdk update"
