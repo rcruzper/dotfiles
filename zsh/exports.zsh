@@ -26,7 +26,7 @@ paths=(
   "/bin"
   "/usr/sbin"
   "/sbin"
-  "~/.local/bin"
+  "$HOME/.local/bin" # pipx binaries
 )
 
 PATH=$(
