@@ -40,7 +40,6 @@ brew 'vim'
 brew "watch"
 brew 'wget'
 brew "yamllint"
-brew "yq"
 brew 'z'
 brew 'zsh'
 
