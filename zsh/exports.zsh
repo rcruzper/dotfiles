@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export BAT_THEME="Nord"
+export BAT_THEME="Dracula"
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=30000
