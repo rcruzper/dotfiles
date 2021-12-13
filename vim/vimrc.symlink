@@ -8,6 +8,7 @@ set backspace=2
 let mapleader = ","
 set timeoutlen=1000 ttimeoutlen=0
 set noswapfile
+set termguicolors
 
 """"""""""""""""""""""""""""""
 " Plugins                    "
@@ -17,8 +18,7 @@ source ~/.vim/plug.vim
 """"""""""""""""""""""""""""""
 " Themes/Colors               "
 """"""""""""""""""""""""""""""
-autocmd vimenter * colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme dracula
 
 """"""""""""""""""""""""""""""
 " Vim UI                     "
