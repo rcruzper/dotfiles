@@ -57,11 +57,8 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
+eval "$(direnv hook zsh)"
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/raulcruz/.sdkman"
 [[ -s "/Users/raulcruz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/raulcruz/.sdkman/bin/sdkman-init.sh"
-
-eval "$(direnv hook zsh)"
-
-# Created by `pipx`
-export PATH="$PATH:~/.local/bin"

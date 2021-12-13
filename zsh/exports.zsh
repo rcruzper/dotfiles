@@ -26,6 +26,7 @@ paths=(
   "/bin"
   "/usr/sbin"
   "/sbin"
+  "~/.local/bin"
 )
 
 PATH=$(
@@ -34,4 +35,3 @@ PATH=$(
 )
 
 export PATH
-
