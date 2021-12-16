@@ -9,6 +9,7 @@ let mapleader = ","
 set timeoutlen=1000 ttimeoutlen=0
 set noswapfile
 set termguicolors
+set updatetime=100
 
 """"""""""""""""""""""""""""""
 " Plugins                    "
@@ -29,6 +30,8 @@ set ruler
 set noshowmode
 set laststatus=2
 set incsearch
+let g:airline_symbols = {}
+let g:airline_symbols.branch = '⎇'
 
 """"""""""""""""""""""""""""""
 " Text Formatting/Layout     "
@@ -49,3 +52,4 @@ set formatoptions=ql
 " Mappings                   "
 """"""""""""""""""""""""""""""
 nmap <silent> <Leader>f :FixWhitespace<CR>
+
