@@ -39,6 +39,11 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit ice wait atload"_zsh_autosuggest_start" lucid
 zinit light zsh-users/zsh-autosuggestions
 
+zstyle ':prompt:pure:prompt:success' color green
+zstyle ':prompt:pure:git:branch' color yellow
+zstyle ':prompt:pure:git:dirty' color yellow
+zstyle :prompt:pure:git:stash show yes
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
