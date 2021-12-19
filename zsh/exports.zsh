@@ -16,6 +16,9 @@ export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=30000
 export SAVEHIST=30000
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 paths=(
   "$GOPATH/bin"
   "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
