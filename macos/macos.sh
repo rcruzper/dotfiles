@@ -85,6 +85,12 @@ defaults write com.apple.Dock autohide-delay -float 0
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
+# Set dock size to 40
+defaults write com.apple.dock tilesize -int 46
+
+# Lock dock size
+defaults write com.apple.dock size-immutable -bool yes
+
 # Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
