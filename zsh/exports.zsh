@@ -17,7 +17,8 @@ export HISTSIZE=30000
 export SAVEHIST=30000
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_COMMAND="git --no-pager diff --name-only; git ls-files --others --exclude-standard"
 
 paths=(
   "$GOPATH/bin"
