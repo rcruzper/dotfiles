@@ -10,4 +10,5 @@ bindkey '^[[F' end-of-line                          # [Fn-LeftArrow] - move to 
 bindkey '^[[3~' delete-char                         # [Fn-Delete] - delete the character under the cursor
 bindkey "^R" history-search-multi-word              # [Control-R] - search backward incrementally for a specified string
 bindkey '^[[Z' reverse-menu-complete                # [Shift-TAB] - backward TAB in completions
+bindkey '^H' backward-delete-word                   # [Control-H] - delete the last word
 
