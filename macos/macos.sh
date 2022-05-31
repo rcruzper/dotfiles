@@ -76,16 +76,16 @@ chflags nohidden ~/Library
 # Set dock pop-in delay to 0
 defaults write com.apple.dock autohide-time-modifier -int 0
 
-# Set dock position on the left of the screen
-defaults write com.apple.Dock orientation -string left
+# Set dock position on the down of the screen
+defaults write com.apple.Dock orientation -string down
 
 # Remove the Delay for Auto-Hide & Auto-Show of Dock
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.Dock autohide-delay -float 5
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
-# Set dock size to 40
+# Set dock size to 64
 defaults write com.apple.dock tilesize -int 64
 
 # Lock dock size
@@ -121,9 +121,12 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Start screen saver
+# Bottom left screen corner → no-op
 defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
+# Bottom right screen corner → no-op
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Time Machine                                                                #
