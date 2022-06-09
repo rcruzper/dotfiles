@@ -46,6 +46,7 @@ brew "yamllint"
 brew 'z'
 brew 'zsh'
 
+cask 'amethyst'
 cask 'charles'
 cask 'docker'
 cask 'font-cascadia'
