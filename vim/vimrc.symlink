@@ -57,4 +57,5 @@ set formatoptions=ql
 let mapleader=","
 
 nmap <silent> <Leader>f :FixWhitespace<CR>
+nmap <silent> <Leader>l :%!jq .<CR>
 
