@@ -39,6 +39,7 @@ brew 'siege'
 brew "telnet"
 brew 'tfenv'
 brew 'the_silver_searcher'
+brew 'tmux'
 brew 'tree'
 brew 'vim'
 brew "watch"
