@@ -11,8 +11,8 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
 
-zinit ice wait atload"unalias grv" lucid
-zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit ice wait"0" lucid
+zinit snippet OMZP::git
 
 zstyle ':completion:*' menu select
 zinit ice wait blockf atpull'zinit creinstall -q .' lucid
