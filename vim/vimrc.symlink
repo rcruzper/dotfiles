@@ -10,6 +10,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set noswapfile
 set termguicolors
 set updatetime=100
+set hlsearch
 
 """"""""""""""""""""""""""""""
 " Plugins                    "
@@ -24,7 +25,7 @@ colorscheme dracula
 """"""""""""""""""""""""""""""
 " Vim UI                     "
 """"""""""""""""""""""""""""""
-set number
+set number relativenumber
 set ignorecase
 set ruler
 set noshowmode
@@ -32,6 +33,7 @@ set laststatus=2
 set incsearch
 let g:airline_symbols = {}
 let g:airline_symbols.branch = '⎇'
+set showmatch
 
 """"""""""""""""""""""""""""""
 " Text Formatting/Layout     "
@@ -45,11 +47,14 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set autoindent
 " disable autocommenting in new lines
 set formatoptions=ql
 
 """"""""""""""""""""""""""""""
 " Mappings                   "
 """"""""""""""""""""""""""""""
+let mapleader=","
+
 nmap <silent> <Leader>f :FixWhitespace<CR>
 
