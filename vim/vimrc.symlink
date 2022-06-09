@@ -59,3 +59,4 @@ let mapleader=","
 nmap <silent> <Leader>f :FixWhitespace<CR>
 nmap <silent> <Leader>l :%!jq .<CR>
 
+au BufNewFile,BufRead Jenkinsfile setf groovy
