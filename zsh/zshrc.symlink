@@ -21,9 +21,6 @@ zinit light zsh-users/zsh-completions
 zinit ice wait"0" lucid
 zinit load zdharma-continuum/history-search-multi-word
 
-zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
-zinit light sindresorhus/pure
-
 zinit ice wait"1" lucid
 zinit light rcruzper/zsh-git-plugin
 
@@ -41,10 +38,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 zle_bracketed_paste=()
 
-zstyle ':prompt:pure:prompt:success' color green
-zstyle ':prompt:pure:git:branch' color yellow
-zstyle ':prompt:pure:git:dirty' color yellow
-zstyle :prompt:pure:git:stash show yes
+eval "$(starship init zsh)"
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles

@@ -36,6 +36,7 @@ brew 'node'
 brew 'openssl'
 brew 'saml2aws'
 brew 'siege'
+brew 'starship'
 brew "telnet"
 brew 'tfenv'
 brew 'the_silver_searcher'
