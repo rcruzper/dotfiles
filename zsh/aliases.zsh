@@ -9,3 +9,5 @@ alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
 
 alias dotfiles="cd ~/.dotfiles"
+
+alias z='__zoxide_z'

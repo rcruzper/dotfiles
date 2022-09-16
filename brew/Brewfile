@@ -47,7 +47,7 @@ brew 'vim'
 brew "watch"
 brew 'wget'
 brew "yamllint"
-brew 'z'
+brew 'zoxide'
 brew 'zsh'
 
 cask 'amethyst'
