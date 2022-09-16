@@ -5,6 +5,7 @@ tap 'jenkins-x/jx'
 tap 'fluxcd/homebrew-tap'
 
 brew 'awscli'
+brew 'az'
 brew 'bash'
 brew 'bat'
 brew 'direnv'
