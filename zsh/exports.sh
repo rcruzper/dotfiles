@@ -12,8 +12,8 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 export BAT_THEME="Dracula"
 
 export HISTFILE="$HOME/.zsh_history"
-#export HISTSIZE=30000
-#export SAVEHIST=30000
+export HISTSIZE=30000
+export SAVEHIST=30000
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
