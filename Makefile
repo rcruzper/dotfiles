@@ -1,4 +1,4 @@
-.PHONY: install
+.DEFAULT_GOAL := install
 
 install:
-	scripts/bootstrap.sh
+	@scripts/bootstrap.sh
