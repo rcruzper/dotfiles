@@ -40,28 +40,15 @@ zle_bracketed_paste=()
 
 eval "$(starship init zsh)"
 
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
-
-# load all zsh in .dotfiles
-typeset -U config_files
-config_files=($ZSH/**/*.zsh)
-for file in ${(M)config_files:#*/*.zsh}
-do
-  source $file
-done
-
 # override history settings from previous plugin
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
-eval "$(zoxide init zsh --no-aliases)"
+source "$DOTFILES_PATH/zsh/exports.sh"
+source "$DOTFILES_PATH/zsh/aliases.sh"
+source "$DOTFILES_PATH/zsh/functions.sh"
+source "$DOTFILES_PATH/zsh/key-bindings.zsh"
 
-function load_sdk() {
-  fname=$(declare -f -F sdk)
-
-  [ -n "$fname" ] || source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-  sdk "$1"
-}
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
