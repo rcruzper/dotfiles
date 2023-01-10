@@ -42,6 +42,7 @@ brew 'starship'
 brew "telnet"
 brew 'tfenv'
 brew 'the_silver_searcher'
+brew 'tldr'
 brew 'tmux'
 brew 'tree'
 brew 'vim'
