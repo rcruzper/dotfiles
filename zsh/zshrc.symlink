@@ -50,6 +50,3 @@ source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
 source "$DOTFILES_PATH/zsh/functions.sh"
 source "$DOTFILES_PATH/zsh/key-bindings.zsh"
-
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
