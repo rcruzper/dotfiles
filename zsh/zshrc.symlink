@@ -40,10 +40,11 @@ zle_bracketed_paste=()
 
 eval "$(starship init zsh)"
 
-# override history settings from previous plugin
 setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
+setopt HIST_FCNTL_LOCK
+setopt +o nomatch
 
 source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
