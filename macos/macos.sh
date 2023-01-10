@@ -79,6 +79,12 @@ defaults write com.apple.dock autohide-time-modifier -int 0
 # Set dock position on the down of the screen
 defaults write com.apple.Dock orientation -string down
 
+# Set dock position on the down of the screen
+defaults write com.apple.Dock mineffect -string scale
+
+# Enable autohide of Dock
+defaults write com.apple.Dock autohide -float 1
+
 # Remove the Delay for Auto-Hide & Auto-Show of Dock
 defaults write com.apple.Dock autohide-delay -float 5
 
