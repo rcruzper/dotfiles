@@ -11,24 +11,16 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit installer's chunk
 
-zinit ice wait"0" lucid
-zinit snippet OMZP::git
+zinit wait"1" lucid light-mode for \
+    OMZP::git \
+    zdharma-continuum/history-search-multi-word \
+    rcruzper/zsh-git-plugin \
+    wfxr/forgit \
+    djui/alias-tips
 
 zstyle ':completion:*' menu select
 zinit ice wait blockf atpull'zinit creinstall -q .' lucid
 zinit light zsh-users/zsh-completions
-
-zinit ice wait"0" lucid
-zinit load zdharma-continuum/history-search-multi-word
-
-zinit ice wait"1" lucid
-zinit light rcruzper/zsh-git-plugin
-
-zinit ice wait"1" lucid
-zinit light wfxr/forgit
-
-zinit ice wait"1" lucid
-zinit light djui/alias-tips
 
 zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
