@@ -12,10 +12,7 @@ autoload -Uz _zinit
 ### End of Zinit installer's chunk
 
 zinit wait"1" lucid light-mode for \
-    OMZP::git \
     zdharma-continuum/history-search-multi-word \
-    rcruzper/zsh-git-plugin \
-    wfxr/forgit \
     djui/alias-tips
 
 zstyle ':completion:*' menu select
