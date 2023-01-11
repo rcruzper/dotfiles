@@ -47,14 +47,19 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Finder: show path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
+defaults write com.apple.finder ShowRecentTags -bool false
+
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-# When performing a search, search the current folder by default
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Set search scope.
+# This Mac       : `SCev`
+# Current Folder : `SCcf`
+# Previous Scope : `SCsp`
+defaults write com.apple.finder FXDefaultSearchScope SCcf
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -62,9 +67,22 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Set preferred view style.
+# Icon View   : `icnv`
+# List View   : `Nlsv`
+# Column View : `clmv`
+# Cover Flow  : `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle Nlsv
+
+# Set default path for new windows.
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+defaults write com.apple.finder NewWindowTarget PfHm
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
