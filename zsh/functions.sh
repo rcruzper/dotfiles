@@ -1,17 +1,23 @@
-function load_sdk() {
-  fname=$(declare -f -F sdk)
+function sdk() {
+   fname=$(declare -f -F infer_platform)
 
-  [ -n "$fname" ] || source "$HOME/.sdkman/bin/sdkman-init.sh"
+  [ -n "$fname" ] || unset -f sdk && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-  sdk "$1"
+  sdk $@
 }
 
 function z() {
-  fname=$(declare -f -F sdk)
+  fname=$(declare -f -F __zoxide_z)
 
   [ -n "$fname" ] || eval "$(zoxide init zsh --no-aliases)"
 
   __zoxide_z "$1"
+}
+
+function nvm() {
+  [ -n "$NVM_DIR" ] || unset -f nvm && source "/usr/local/opt/nvm/nvm.sh" && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+  nvm $@
 }
 
 # aws functions
