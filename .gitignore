@@ -3,5 +3,5 @@ git/gitconfig.local.symlink
 atom/atom.symlink/gist.token
 brew/Brewfile.lock.json
 sdkman.symlink/candidates
-raycast/scripts/cloud-properties-decrypt.sh
-raycast/scripts/cloud-properties-encrypt.sh
+**/**/private-*
+
