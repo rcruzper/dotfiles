@@ -1,5 +1,4 @@
-# Dotfiles
-
+# rcruzper/dotfiles
 
 ![](https://raw.githubusercontent.com/rcruzper/dotfiles/master/iterm.png)
 
