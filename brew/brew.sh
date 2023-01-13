@@ -25,7 +25,7 @@ else
 fi
 
 info 'Installing homebrew bundle packages'
-brew bundle install -v --file="$DOTFILES_ROOT/brew/Brewfile"
+brew bundle install --file="$DOTFILES_ROOT/brew/Brewfile"
 success 'Installing homebrew bundle packages'
 
 #info 'Cleaning up old formulae'
