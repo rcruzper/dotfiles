@@ -17,19 +17,18 @@ else
     info 'Updating brew'
     brew update
     success 'Updating brew'
-    info 'Upgrading brew formulae'
-    brew upgrade --ignore-pinned
-    # TODO: remove from here because if the intellij app is not installed, it fails
-    # brew cask upgrade intellij-idea
-    success 'Upgrading brew formulae'
+
+    if [ -z ${CI+false} ]
+    then
+        info 'Upgrading brew formulae'
+        brew upgrade
+        success 'Upgrading brew formulae'
+    fi
 fi
 
-info 'Installing homebrew bundle packages'
-brew bundle install --file="$DOTFILES_ROOT/brew/Brewfile"
-success 'Installing homebrew bundle packages'
-
-#info 'Cleaning up old formulae'
-#brew cleanup -s
-#success 'Cleaning up old formulae'
-
-#TODO show brew doctor at the end
+    if [ -z ${CI+false} ]
+    then
+        info 'Installing homebrew bundle packages'
+        brew bundle install -v --file="$DOTFILES_ROOT/brew/Brewfile"
+        success 'Installing homebrew bundle packages'
+    fi

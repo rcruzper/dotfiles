@@ -20,7 +20,7 @@ source ~/.vim/plug.vim
 """"""""""""""""""""""""""""""
 " Themes/Colors               "
 """"""""""""""""""""""""""""""
-colorscheme dracula
+silent! colorscheme dracula
 
 """"""""""""""""""""""""""""""
 " Vim UI                     "
