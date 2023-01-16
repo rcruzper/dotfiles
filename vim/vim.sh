@@ -11,5 +11,5 @@ ln -snf "$DOTFILES_ROOT/vim/plug.vim" ~/.vim
 success 'Installing plug.vim'
 
 info 'Updating vim plugins'
-vim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall
+vim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall > /dev/null
 success 'Updating vim plugins'
