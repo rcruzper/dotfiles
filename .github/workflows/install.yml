@@ -1,0 +1,19 @@
+name: macos
+
+on:
+  push:
+    branches: [ "ci" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Deps
+      run: sed -e "s/AUTHORNAME/testname/g" -e "s/AUTHOREMAIL/testemail/g" "git/gitconfig.local.symlink.example" > "git/gitconfig.local.symlink"
+    - name: Install
+      run: TERM=xterm CI=true make
