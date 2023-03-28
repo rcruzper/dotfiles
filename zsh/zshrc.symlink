@@ -35,6 +35,8 @@ setopt EXTENDED_HISTORY
 setopt HIST_FCNTL_LOCK
 setopt +o nomatch
 
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
 source "$DOTFILES_PATH/zsh/functions.sh"
