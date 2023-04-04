@@ -12,3 +12,4 @@ sdkman_auto_complete=true
 sdkman_auto_update=true
 sdkman_checksum_enable=true
 sdkman_selfupdate_feature=true
+sdkman_rosetta2_compatible=false
