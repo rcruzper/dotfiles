@@ -7,7 +7,7 @@ source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 if [ ! "$(command -v brew)" ]
 then
     info 'Installing brew'
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     success 'Installing brew'
 
     info 'Installing iterm2'
