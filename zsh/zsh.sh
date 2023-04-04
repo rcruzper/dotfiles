@@ -15,14 +15,14 @@ fi
 # Set zsh as default shell
 if [[ -n $SHELL ]]
 then
-    if [ "$SHELL" != "/usr/local/bin/zsh" ]
+    if [ "$SHELL" != "/opt/homebrew/bin/zsh" ]
     then
         info 'Setting up zsh as default shell'
-        if ! grep -q /usr/local/bin/zsh /etc/shells; then
-            echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells
+        if ! grep -q /opt/homebrew/bin/zsh /etc/shells; then
+            echo "/opt/homebrew/bin/zsh" | sudo tee -a /etc/shells
         fi
 
-        sudo chsh -s "/usr/local/bin/zsh" "$(whoami)"
+        sudo chsh -s "/opt/homebrew/bin/zsh" "$(whoami)"
 
         success 'Setting up zsh as default shell'
     fi

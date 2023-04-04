@@ -21,8 +21,9 @@ export FZF_CTRL_T_COMMAND="git --no-pager diff --name-only; git ls-files --other
 
 paths=(
   "$GOPATH/bin"
-  "/usr/local/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
-  "/usr/local/opt/make/libexec/gnubin" # Use gnu-make
+  "/opt/homebrew/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
+  "/opt/homebrew/opt/make/libexec/gnubin" # Use gnu-make
+  "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/bin"
   "/usr/local/sbin"

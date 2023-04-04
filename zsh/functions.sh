@@ -15,7 +15,7 @@ function z() {
 }
 
 function nvm() {
-  [ -n "$NVM_DIR" ] || unset -f nvm && source "/usr/local/opt/nvm/nvm.sh" && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+  [ -n "$NVM_DIR" ] || unset -f nvm && source "/opt/homebrew/opt/nvm/nvm.sh" && source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
   nvm $@
 }
