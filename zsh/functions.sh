@@ -91,3 +91,21 @@ function gcshow() {
     commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
     echo -n $(echo "$commit" | sed "s/ .*//")
 }
+
+function sw() {
+    case "$1" in
+        *dev*)
+        export AWS_PROFILE="default"
+        kubectx dev
+        ;;
+        *pro*)
+        export AWS_PROFILE="production"
+        kubectx pro
+        ;;
+        *lernmi*)
+        export AWS_PROFILE=""
+        kubectx lernmi-cluster-admin
+        ;;
+    esac
+}
+
