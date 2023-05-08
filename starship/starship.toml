@@ -1,0 +1,28 @@
+#right_format = """$kubernetes"""
+#add_newline = false
+
+[aws]
+disabled = true
+
+[directory]
+style = "blue"
+
+[git_branch]
+style = "yellow"
+format = "[$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "red"
+
+[java]
+symbol = " "
+
+[kubernetes]
+format = '[$symbol$context( \($namespace\))]($style) in '
+disabled = false
+symbol = "⛵ "
+style = "208"
+
+[package]
+disabled = true
+
