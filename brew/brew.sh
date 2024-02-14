@@ -21,7 +21,7 @@ else
     if [ -z ${CI+false} ]
     then
         info 'Upgrading brew formulae'
-        brew upgrade --ignore-pinned
+        brew upgrade
         success 'Upgrading brew formulae'
     fi
 fi
