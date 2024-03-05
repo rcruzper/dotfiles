@@ -23,6 +23,7 @@ paths=(
   "$GOPATH/bin"
   "/opt/homebrew/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
   "/opt/homebrew/opt/make/libexec/gnubin" # Use gnu-make
+  "/opt/homebrew/sbin"
   "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/bin"
