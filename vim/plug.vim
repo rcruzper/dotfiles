@@ -1,10 +1,11 @@
 """"""""""""""""""""""""""""""
 " Plugins                    "
 """"""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 " Colorscheme
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " Make commenting easier (gcc, gcap)
 Plug 'tpope/vim-commentary'

@@ -20,7 +20,7 @@ source ~/.vim/plug.vim
 """"""""""""""""""""""""""""""
 " Themes/Colors               "
 """"""""""""""""""""""""""""""
-silent! colorscheme dracula
+silent! colorscheme catppuccin_frappe
 
 """"""""""""""""""""""""""""""
 " Vim UI                     "
@@ -33,6 +33,7 @@ set laststatus=2
 set incsearch
 let g:airline_symbols = {}
 let g:airline_symbols.branch = '⎇'
+let g:airline_theme = 'catppuccin_frappe'
 set showmatch
 
 """"""""""""""""""""""""""""""
