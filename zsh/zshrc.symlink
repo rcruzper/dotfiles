@@ -28,7 +28,9 @@ zinit light zsh-users/zsh-autosuggestions
 zle_bracketed_paste=()
 
 setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
 setopt EXTENDED_HISTORY
 setopt HIST_FCNTL_LOCK
 setopt +o nomatch
