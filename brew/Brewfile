@@ -39,6 +39,7 @@ brew "kubernetes-cli"
 brew 'kubeseal'
 brew 'make'
 brew 'maven'
+brew 'neovim'
 brew 'nvm'
 brew 'openssl'
 brew 'qmk/qmk/qmk'

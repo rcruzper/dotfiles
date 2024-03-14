@@ -1,6 +1,7 @@
 export GOPATH=~/develop/go
 
-export EDITOR='vim'
+export EDITOR='nvim'
+export KUBE_EDITOR='nvim'
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ANALYTICS=true

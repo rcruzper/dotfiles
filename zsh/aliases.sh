@@ -7,6 +7,7 @@ alias ll='ls -la'
 
 alias watch='watch '
 
+alias v='nvim '
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
 alias o.='open .'
