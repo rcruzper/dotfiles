@@ -4,6 +4,9 @@ format = """$directory$git_branch$character"""
 right_format = """$all"""
 palette = "catppuccin_frappe"
 
+[kubernetes]
+disabled = false
+format = '[$symbol$context(\($namespace\))]($style) '
 [aws]
 disabled = true
 [aws.profile_aliases]
