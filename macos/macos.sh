@@ -104,7 +104,7 @@ defaults write com.apple.Dock mineffect -string scale
 defaults write com.apple.Dock autohide -float 1
 
 # Remove the Delay for Auto-Hide & Auto-Show of Dock
-defaults write com.apple.Dock autohide-delay -float 5
+defaults write com.apple.Dock autohide-delay -float "0.5"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -168,3 +168,4 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 for app in "Dock" "Finder"; do killall "${app}" &> /dev/null; done
 
 success 'Setting up osx'
+
