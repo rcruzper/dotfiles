@@ -24,6 +24,8 @@
 	<false/>
 	<key>CopySelection</key>
 	<true/>
+	<key>CopyWithStylesByDefault</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -1944,6 +1946,8 @@
 				<key>Red Component</key>
 				<real>0.77647058823529413</real>
 			</dict>
+			<key>Cursor Shadow</key>
+			<false/>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -3622,7 +3626,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowNewOutputIndicator</key>
 	<true/>
 	<key>ShowPaneTitles</key>
