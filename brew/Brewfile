@@ -43,6 +43,7 @@ brew 'neovim'
 brew 'nvm'
 brew 'openssl'
 brew 'qmk/qmk/qmk'
+brew 'rustup-init'
 brew 'siege'
 brew 'starship'
 brew "telnet"

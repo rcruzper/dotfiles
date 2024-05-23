@@ -33,6 +33,7 @@ paths=(
   "/usr/sbin"
   "/sbin"
   "$HOME/.local/bin" # pipx binaries
+  "$HOME/.cargo/bin"
 )
 
 PATH=$(
