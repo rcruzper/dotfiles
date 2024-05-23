@@ -38,3 +38,5 @@ vim.opt.cursorline = true
 -- Always keep 8 lines above/below cursor unless at start/end of file
 vim.opt.scrolloff = 8
 
+vim.opt.mouse = ""
+
