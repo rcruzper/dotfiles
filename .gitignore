@@ -2,4 +2,5 @@
 git/gitconfig.local.symlink
 brew/Brewfile.lock.json
 **/**/private-*
+nvim/nvim/lazy-lock.json
 
