@@ -6,13 +6,11 @@ palette = "catppuccin_frappe"
 command_timeout = 5000
 
 [kubernetes]
-disabled = false
+disabled = true
 format = '[$symbol$context(\($namespace\))]($style) '
+
 [aws]
 disabled = true
-[aws.profile_aliases]
-default = "develop"
-production = "production"
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
