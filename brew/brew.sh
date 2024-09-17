@@ -18,17 +18,11 @@ else
     brew update
     success 'Updating brew'
 
-    if [ -z ${CI+false} ]
-    then
-        info 'Upgrading brew formulae'
-        brew upgrade
-        success 'Upgrading brew formulae'
-    fi
+    info 'Upgrading brew formulae'
+    brew upgrade
+    success 'Upgrading brew formulae'
 fi
 
-    if [ -z ${CI+false} ]
-    then
-        info 'Installing homebrew bundle packages'
-        brew bundle install -v --file="$DOTFILES_ROOT/brew/Brewfile"
-        success 'Installing homebrew bundle packages'
-    fi
+info 'Installing homebrew bundle packages'
+brew bundle install -v --file="$DOTFILES_ROOT/brew/Brewfile"
+success 'Installing homebrew bundle packages'
