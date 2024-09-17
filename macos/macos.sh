@@ -11,9 +11,9 @@ info 'Setting up osx (It will restart Dock and Finder)'
 ###############################################################################
 
 # Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Auto"
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 
-# Save to disk (not to iCloud) by default
+# iCloud Documents is the default directory opened in the fileviewer dialog when saving a new document
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Disable the “Are you sure you want to open this application?” dialog
@@ -95,16 +95,16 @@ chflags nohidden ~/Library
 defaults write com.apple.dock autohide-time-modifier -int 0
 
 # Set dock position on the down of the screen
-defaults write com.apple.Dock orientation -string down
+defaults write com.apple.dock orientation -string bottom
 
 # Set dock position on the down of the screen
-defaults write com.apple.Dock mineffect -string scale
+defaults write com.apple.dock mineffect -string scale
 
 # Enable autohide of Dock
-defaults write com.apple.Dock autohide -float 1
+defaults write com.apple.dock autohide -float 1
 
 # Remove the Delay for Auto-Hide & Auto-Show of Dock
-defaults write com.apple.Dock autohide-delay -float "0.5"
+defaults write com.apple.dock autohide-delay -float "0.5"
 
 # Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
@@ -115,17 +115,14 @@ defaults write com.apple.dock tilesize -int 64
 # Lock dock size
 defaults write com.apple.dock size-immutable -bool yes
 
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
+# Don't show recently used apps in a separate section of the Dock.
+defaults write com.apple.dock "show-recents" -bool "false"
 
 # Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
+#defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
-
-# Reset Launchpad, but keep the desktop wallpaper intact
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Hot corners
 # Possible values:
@@ -146,11 +143,11 @@ defaults write com.apple.dock wvous-tl-modifier -int 0
 defaults write com.apple.dock wvous-tr-corner -int 4
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → no-op
-defaults write com.apple.dock wvous-bl-corner -int 0
-defaults write com.apple.dock wvous-bl-modifier -int 0
+#defaults write com.apple.dock wvous-bl-corner -int 0
+#defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner → no-op
-defaults write com.apple.dock wvous-br-corner -int 0
-defaults write com.apple.dock wvous-br-modifier -int 0
+#defaults write com.apple.dock wvous-br-corner -int 0
+#defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Time Machine                                                                #
