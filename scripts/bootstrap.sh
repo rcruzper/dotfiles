@@ -7,7 +7,6 @@ DOTFILES_ROOT=$(pwd -P)
 
 export DOTFILES_ROOT
 
-# shellcheck source=-~/.dotfiles/scripts/tools/logging.sh
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
 "$DOTFILES_ROOT/macos/macos.sh"
@@ -17,6 +16,6 @@ source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 "$DOTFILES_ROOT/zsh/zsh.sh"
 "$DOTFILES_ROOT/scripts/symlink.sh"
 "$DOTFILES_ROOT/starship/starship.sh"
-"$DOTFILES_ROOT/vim/vim.sh"
+# "$DOTFILES_ROOT/vim/vim.sh"
 "$DOTFILES_ROOT/nvim/nvim.sh"
 
