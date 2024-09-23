@@ -7,6 +7,12 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
+        require("neo-tree.events").clear_all_events()
+        require("neo-tree.sources.manager")._clear_state()
+        require("neo-tree.ui.renderer").clean_invalid_neotree_buffers(true)
+
+        collectgarbage("collect")
+
         require('neo-tree').setup({
             close_if_last_window = true,
             filesystem = {
