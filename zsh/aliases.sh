@@ -14,8 +14,6 @@ alias o.='open .'
 
 alias dotfiles="cd ~/.dotfiles"
 
-alias cat=bat
-
 # kubernetes aliases
 alias k=kubectl
 alias kaf='kubectl apply -f'
