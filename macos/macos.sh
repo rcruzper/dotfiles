@@ -124,6 +124,9 @@ defaults write com.apple.dock "show-recents" -bool "false"
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Workaround to fix aerospace behaviour when mission control shows windows too small
+defaults write com.apple.dock expose-group-apps -bool true
+
 # Hot corners
 # Possible values:
 #  0: no-op
