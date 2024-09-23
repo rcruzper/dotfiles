@@ -94,17 +94,9 @@ function gcshow() {
 
 function sw() {
     case "$1" in
-        *dev*)
-        export AWS_PROFILE="default"
-        kubectx dev
+        *case1*)
         ;;
-        *pro*)
-        export AWS_PROFILE="production"
-        kubectx pro
-        ;;
-        *lernmi*)
-        export AWS_PROFILE=""
-        kubectx lernmi-cluster-admin
+        *case2*)
         ;;
     esac
 }
