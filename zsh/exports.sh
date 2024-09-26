@@ -1,5 +1,3 @@
-export GOPATH=~/develop/go
-
 export EDITOR='nvim'
 export KUBE_EDITOR='nvim'
 
@@ -20,25 +18,3 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_COMMAND="git --no-pager diff --name-only; git ls-files --others --exclude-standard"
 
-paths=(
-  "$GOPATH/bin"
-  "/opt/homebrew/opt/gnu-sed/libexec/gnubin" # Use gnu-sed (mac version is from BSD 2005)
-  "/opt/homebrew/opt/make/libexec/gnubin" # Use gnu-make
-  "/opt/homebrew/sbin"
-  "/opt/homebrew/bin"
-  "/usr/local/bin"
-  "/usr/bin"
-  "/usr/local/sbin"
-  "/bin"
-  "/usr/sbin"
-  "/sbin"
-  "$HOME/.local/bin" # pipx binaries
-  "$HOME/.cargo/bin"
-)
-
-PATH=$(
-  IFS=":"
-  echo "${paths[*]}"
-)
-
-export PATH
