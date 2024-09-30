@@ -40,3 +40,9 @@ vim.opt.scrolloff = 8
 
 vim.opt.mouse = ""
 
+vim.api.nvim_create_autocmd('VimLeave', {
+  callback = function()
+    vim.opt.guicursor = 'a:hor20'
+  end,
+})
+
