@@ -3678,6 +3678,8 @@
 	<false/>
 	<key>TmuxDashboardLimit</key>
 	<integer>10</integer>
+	<key>TmuxUsesDedicatedProfile</key>
+	<true/>
 	<key>ToolbeltTools</key>
 	<array>
 		<string>Profiles</string>
