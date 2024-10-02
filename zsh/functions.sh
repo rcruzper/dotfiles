@@ -92,6 +92,11 @@ function gcshow() {
     echo -n $(echo "$commit" | sed "s/ .*//")
 }
 
+function lf() {
+    fzf --preview 'bat --style=numbers --color=always {}' | xargs -n 1 nvim
+}
+
+# change between cloud environments
 function sw() {
     case "$1" in
         *case1*)
