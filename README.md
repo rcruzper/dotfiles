@@ -1,6 +1,6 @@
 # rcruzper/dotfiles
 
-![](https://raw.githubusercontent.com/rcruzper/dotfiles/master/iterm.png)
+![](https://raw.githubusercontent.com/rcruzper/dotfiles/master/screenshot.png)
 
 This is my set of configuration files to get ready in any new machine. If you want to know more about dotfiles, see [dotfiles.github.io](https://dotfiles.github.io/).
 
