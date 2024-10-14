@@ -2911,7 +2911,7 @@
 			<key>Guid</key>
 			<string>2D440B29-5484-417A-8712-15ADEE5683EC</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
