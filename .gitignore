@@ -3,3 +3,5 @@ git/gitconfig.local.symlink
 brew/Brewfile.lock.json
 **/**/private-*
 tmux/tmux/plugins/**
+tmux/tmux/.tmux_resurrect
+
