@@ -62,6 +62,7 @@ run = "layout floating"
 [workspace-to-monitor-force-assignment]
 M = '^built-in retina display$'
 V = '^built-in retina display$'
+R = '^built-in retina display$'
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
