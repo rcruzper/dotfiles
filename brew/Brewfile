@@ -56,7 +56,7 @@ brew 'tmux'
 #brew "watch"
 #brew 'wget'
 #brew "yamllint"
-#brew 'zoxide'
+brew 'zoxide'
 #brew 'zsh'
 
 #cask 'amethyst'
