@@ -56,6 +56,18 @@ function gcheckout() {
     fi
 }
 
+# gmerge - merge local|remote branch
+function gmerge() {
+    if [[ -n $1 ]] then
+        git merge "$@"
+    else
+        local branches branch
+        branches=$(git branch --all | grep -v HEAD) &&
+        branch=$(echo "$branches" | fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+        git merge $(echo "$branch" | sed "s/.* //")
+    fi
+}
+
 # gfix - git commit -a --fixup
 function gfix() {
     local commits commitId
@@ -90,6 +102,11 @@ function gcshow() {
     commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
     commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
     echo -n $(echo "$commit" | sed "s/ .*//")
+}
+
+# delete remote branches
+function gdr() {
+    git branch -r --sort=committerdate | sed 's|origin/||g' | fzf --multi | xargs -I '{}' git push origin --delete refs/heads/{}
 }
 
 function lf() {
