@@ -76,10 +76,10 @@ if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
 [workspace-to-monitor-force-assignment]
-F = '^built-in retina display$'
+F = '^LG HDR 4K$'
 G = '^built-in retina display$'
-M = '^built-in retina display$'
-N = '^built-in retina display$'
+M = '^LG HDR 4K$'
+N = '^LG HDR 4K$'
 R = '^built-in retina display$'
 V = '^built-in retina display$'
 
