@@ -22,3 +22,4 @@ then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+export PATH=$PATH:/opt/homebrew/opt/kafka/bin
