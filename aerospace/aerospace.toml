@@ -63,10 +63,6 @@ if.app-id = 'notion.id'
 run = "move-node-to-workspace N"
 
 [[on-window-detected]]
-if.app-id = 'com.postmanlabs.mac'
-run = "move-node-to-workspace P"
-
-[[on-window-detected]]
 if.app-id = 'com.apple.finder'
 check-further-callbacks = true
 run = "layout floating"
