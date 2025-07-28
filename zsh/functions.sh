@@ -123,3 +123,13 @@ function sw() {
     esac
 }
 
+# remove remote branches already merged into default branch
+function gdrm() {
+    local DEFAULT_BRANCH
+    DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/)
+    for branch in $(git branch -r --merged $DEFAULT_BRANCH | grep origin | grep -v develop | grep -v $DEFAULT_BRANCH); do 
+        git push origin --delete "${branch#*/}"
+        #echo "${branch#*/}"
+    done
+}
+
