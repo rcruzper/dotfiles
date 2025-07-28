@@ -63,3 +63,8 @@ source "$DOTFILES_PATH/zsh/functions.sh"
 source "$DOTFILES_PATH/zsh/key-bindings.zsh"
 
 eval "$(starship init zsh)"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/raulcruz/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
