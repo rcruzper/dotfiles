@@ -27,3 +27,16 @@ require("lazy").setup({
     },
 })
 
+require("notify").setup({})
+
+vim.notify = require("notify")
+
+require("hardtime").setup({
+  disabled_keys = {
+    ["<Up>"] = false, -- Allow <Up> key
+    ["<Down>"] = false, -- Allow <Up> key
+    ["<Right>"] = false, -- Allow <Up> key
+    ["<Left>"] = false, -- Allow <Up> key
+  },
+})
+
