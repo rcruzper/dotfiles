@@ -5,12 +5,12 @@ set -euo pipefail
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
 # Install zsh
-if [ ! "$(command -v zsh)" ]
-then
-    info 'Installing zsh'
-    brew install zsh
-    success 'Installing zsh'
-fi
+#if [ ! "$(command -v zsh)" ]
+#then
+#    info 'Installing zsh'
+#    brew install zsh
+#    success 'Installing zsh'
+#fi
 
 # Set zsh as default shell
 if [[ -n $SHELL ]]
@@ -18,11 +18,11 @@ then
     if [ "$SHELL" != "/bin/zsh" ]
     then
         info 'Setting up zsh as default shell'
-        if ! grep -q /opt/homebrew/bin/zsh /etc/shells; then
-            echo "/opt/homebrew/bin/zsh" | sudo tee -a /etc/shells
+        if ! grep -q /bin/zsh /etc/shells; then
+            echo "/bin/zsh" | sudo tee -a /etc/shells
         fi
 
-        sudo chsh -s "/opt/homebrew/bin/zsh" "$(whoami)"
+        sudo chsh -s "/bin/zsh" "$(whoami)"
 
         success 'Setting up zsh as default shell'
     fi

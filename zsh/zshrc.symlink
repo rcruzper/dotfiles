@@ -23,7 +23,6 @@ zinit light-mode for \
 
 zinit wait"1" lucid light-mode for \
     zdharma-continuum/history-search-multi-word \
-    matthieusb/zsh-sdkman \
     djui/alias-tips
 
 zstyle ':completion:*' menu select
