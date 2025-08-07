@@ -143,7 +143,7 @@ defaults write com.apple.dock expose-group-apps -bool true
 defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Desktop
-defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → no-op
 #defaults write com.apple.dock wvous-bl-corner -int 0
