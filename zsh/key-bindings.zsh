@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # vicmd mode
-bindkey -v
+#bindkey -v
 
 if [ "$TERM_PROGRAM" = tmux ]; then
     bindkey '^[[1;3D' emacs-backward-word               # [Option-RightArrow] - move to the begginning of the previous word
