@@ -74,7 +74,7 @@ run = 'layout floating'
 [workspace-to-monitor-force-assignment]
 F = '^LG HDR 4K$'
 G = '^built-in retina display$'
-M = '^LG HDR 4K$'
+M = '^built-in retina display$'
 N = '^LG HDR 4K$'
 R = '^built-in retina display$'
 V = '^built-in retina display$'
