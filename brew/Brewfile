@@ -74,7 +74,6 @@ cask 'shortcat'
 cask 'slack'
 cask 'spotify'
 cask 'telegram-desktop'
-cask 'the-unarchiver'
 cask 'visual-studio-code'
 cask 'vlc'
 
