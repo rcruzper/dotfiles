@@ -46,3 +46,8 @@ vim.api.nvim_create_autocmd('VimLeave', {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {"toml", "yaml"},
+  command = "setlocal indentkeys-=0#",
+})
+
