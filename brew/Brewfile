@@ -26,6 +26,7 @@ brew 'rename'
 brew 'ripgrep'
 brew 'starship'
 brew 'tree'
+brew 'tree-sitter-cli'
 brew 'vim'
 brew "watch"
 brew 'wget'
@@ -35,6 +36,7 @@ brew 'zoxide'
 cask 'aerospace'
 cask "nikitabobko/tap/aerospace"
 cask 'claude-code'
+cask 'dbeaver-community'
 cask "docker-desktop"
 cask 'font-jetbrains-mono-nerd-font'
 #cask 'google-chrome'
