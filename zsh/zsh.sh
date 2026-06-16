@@ -4,6 +4,15 @@ set -euo pipefail
 
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
+# Update antidote bundles
+ANTIDOTE_SCRIPT="$(brew --prefix antidote 2>/dev/null)/share/antidote/antidote.zsh"
+if [[ -f "$ANTIDOTE_SCRIPT" ]]; then
+    info 'Updating antidote bundles'
+    zsh -c "source '$ANTIDOTE_SCRIPT' && antidote update"
+    success 'Updating antidote bundles'
+fi
+
+
 # Install zsh
 #if [ ! "$(command -v zsh)" ]
 #then
@@ -13,30 +22,30 @@ source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 #fi
 
 # Set zsh as default shell
-if [[ -n $SHELL ]]
-then
-    if [ "$SHELL" != "/bin/zsh" ]
-    then
-        info 'Setting up zsh as default shell'
-        if ! grep -q /bin/zsh /etc/shells; then
-            echo "/bin/zsh" | sudo tee -a /etc/shells
-        fi
-
-        sudo chsh -s "/bin/zsh" "$(whoami)"
-
-        success 'Setting up zsh as default shell'
-    fi
-fi
+#if [[ -n $SHELL ]]
+#then
+#    if [ "$SHELL" != "/bin/zsh" ]
+#    then
+#        info 'Setting up zsh as default shell'
+#        if ! grep -q /bin/zsh /etc/shells; then
+#            echo "/bin/zsh" | sudo tee -a /etc/shells
+#        fi
+#
+#        sudo chsh -s "/bin/zsh" "$(whoami)"
+#
+#        success 'Setting up zsh as default shell'
+#    fi
+#fi
 
 # Install zinit
-if [ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]
-then
-    info 'Installing zinit'
-    zsh -c "$(sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)")"
-    success 'Installing zinit'
-else
-    info 'Updating zinit'
-    zsh -i -c "zi self-update"
-    zsh -i -c "zi update"
-    success 'Updating zinit'
-fi
+#if [ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]
+#then
+#    info 'Installing zinit'
+#    zsh -c "$(sh -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)")"
+#    success 'Installing zinit'
+#else
+#    info 'Updating zinit'
+#    zsh -i -c "zi self-update"
+#    zsh -i -c "zi update"
+#    success 'Updating zinit'
+#fi
