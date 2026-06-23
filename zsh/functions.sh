@@ -123,6 +123,14 @@ function sw() {
     esac
 }
 
+# remove local branches already merged into develop branch
+function ghdb() {
+    git branch --format='%(refname:short)' | grep -vE '^(develop|main)$' | while read b; do
+        state=$(gh pr view "$b" --json state -q .state 2>/dev/null)
+        [ "$state" = "MERGED" ] && git branch -D "$b"
+    done
+}
+
 # remove remote branches already merged into default branch
 function gdrm() {
     local DEFAULT_BRANCH
