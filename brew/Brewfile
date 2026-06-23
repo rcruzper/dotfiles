@@ -4,8 +4,8 @@ tap "nikitabobko/tap"
 
 brew "antidote"
 brew 'awscli'
-#brew 'aws-iam-authenticator'
 brew 'bat'
+brew 'bun'
 brew "cloudflared"
 brew 'cmake'
 brew 'fd'
