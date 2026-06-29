@@ -27,6 +27,7 @@ brew 'ripgrep'
 brew 'starship'
 brew 'tree'
 brew 'tree-sitter-cli'
+brew 'typescript-language-server'
 brew 'vim'
 brew "watch"
 brew 'wget'
