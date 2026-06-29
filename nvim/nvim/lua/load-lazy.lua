@@ -1,42 +1,42 @@
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
-
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = {
-    { "catppuccin/nvim", name = "catppuccin", priority = 10000 }
-}
-local ots = {}
-
 require("lazy").setup({
-    { import = "plugins" },
-}, {
-    change_detection = {
-        enabled = true,
-        notify = false,
+    spec = {
+        { import = "plugins" },
     },
+    checker = { enabled = true },
+-- }
+-- , {
+--     change_detection = {
+--         enabled = true,
+--         notify = false,
+--     },
 })
 
-require("notify").setup({})
+-- require("notify").setup({})
 
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 
-require("hardtime").setup({
-  disabled_keys = {
-    ["<Up>"] = false, -- Allow <Up> key
-    ["<Down>"] = false, -- Allow <Up> key
-    ["<Right>"] = false, -- Allow <Up> key
-    ["<Left>"] = false, -- Allow <Up> key
-  },
-})
-
+-- require("hardtime").setup({
+--     disabled_keys = {
+--         ["<Up>"] = false, -- Allow <Up> key
+--         ["<Down>"] = false, -- Allow <Up> key
+--         ["<Right>"] = false, -- Allow <Up> key
+--         ["<Left>"] = false, -- Allow <Up> key
+--     },
+-- })
