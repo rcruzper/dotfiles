@@ -294,6 +294,8 @@ Activo en insert mode. Escribir `(` autocompleta `()` con cursor entre paréntes
 
 | Atajo | Acción |
 |-------|--------|
+| `<c-h>`/`<c-j>`/`<c-k>`/`<c-l>` | Saltar a split izq/abajo/arriba/der — cruza sin costura a paneles de tmux (vim-tmux-navigator) |
+| `<c-\>` | Saltar al último split/panel de tmux visitado |
 | `<c-w><space>` | Modo hydra de ventanas (which-key loop) |
 | `,w` | Grupo de ventanas (proxy a `<c-w>`) |
 
