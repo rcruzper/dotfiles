@@ -20,4 +20,5 @@ source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 # "$DOTFILES_ROOT/vim/vim.sh"
 "$DOTFILES_ROOT/nvim/nvim.sh"
 "$DOTFILES_ROOT/tmux/tmux.sh"
+"$DOTFILES_ROOT/bat/bat.sh"
 
