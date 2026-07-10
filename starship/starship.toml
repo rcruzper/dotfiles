@@ -2,7 +2,7 @@
 add_newline = false
 format = """$directory$git_branch$character"""
 right_format = """$all"""
-palette = "catppuccin_frappe"
+palette = "rose-pine"
 command_timeout = 5000
 
 [kubernetes]
@@ -12,38 +12,30 @@ format = '[$symbol$context(\($namespace\))]($style) '
 [aws]
 disabled = true
 
+[directory]
+style = "fg:pine"
+
+[character]
+success_symbol = '[❯](fg:iris)'
+
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
-style = 'bright-black'
+style = 'fg:gold'
+
+[git_status]
+style = 'fg:love'
 
 [package]
 disabled = true
 
-[palettes.catppuccin_frappe]
-rosewater = "#f2d5cf"
-flamingo = "#eebebe"
-pink = "#f4b8e4"
-mauve = "#ca9ee6"
-red = "#e78284"
-maroon = "#ea999c"
-peach = "#ef9f76"
-yellow = "#e5c890"
-green = "#a6d189"
-teal = "#81c8be"
-sky = "#99d1db"
-sapphire = "#85c1dc"
-blue = "#8caaee"
-lavender = "#babbf1"
-text = "#c6d0f5"
-subtext1 = "#b5bfe2"
-subtext0 = "#a5adce"
-overlay2 = "#949cbb"
-overlay1 = "#838ba7"
-overlay0 = "#737994"
-surface2 = "#626880"
-surface1 = "#51576d"
-surface0 = "#414559"
-base = "#303446"
-mantle = "#292c3c"
-crust = "#232634"
+[nodejs]
+style = 'fg:pine'
 
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
