@@ -7,7 +7,7 @@ export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
 
 export DOTFILES_PATH="$HOME/.dotfiles"
 
-export BAT_THEME="Dracula"
+export BAT_THEME="rose-pine"
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=30000
