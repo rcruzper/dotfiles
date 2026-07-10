@@ -1,16 +1,20 @@
-#right_format = """$kubernetes"""
+"$schema" = 'https://starship.rs/config-schema.json'
+
 add_newline = false
-format = """$directory$git_branch$character"""
-right_format = """$all"""
-palette = "rose-pine"
+format = '$directory$git_branch$character'
+right_format = '$all'
 command_timeout = 5000
 
-[kubernetes]
-disabled = true
-format = '[$symbol$context(\($namespace\))]($style) '
+palette = "rose-pine"
 
-[aws]
-disabled = true
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
 
 [directory]
 style = "fg:pine"
@@ -25,17 +29,11 @@ style = 'fg:gold'
 [git_status]
 style = 'fg:love'
 
-[package]
+[aws]
 disabled = true
+
+#[package]
+#disabled = true
 
 [nodejs]
 style = 'fg:pine'
-
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
