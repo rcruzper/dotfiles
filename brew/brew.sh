@@ -19,7 +19,7 @@ else
     success 'Updating brew'
 
     info 'Upgrading brew formulae'
-    brew upgrade --greedy -y
+    brew upgrade -y
     success 'Upgrading brew formulae'
 fi
 
