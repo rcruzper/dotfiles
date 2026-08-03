@@ -22,4 +22,4 @@ then
     FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=$(brew --prefix rustup)/bin:/opt/homebrew/bin:$PATH
