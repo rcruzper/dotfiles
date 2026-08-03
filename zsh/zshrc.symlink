@@ -49,6 +49,7 @@ setopt +o nomatch
 source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
 source "$DOTFILES_PATH/zsh/functions.sh"
+source "$DOTFILES_PATH/zsh/worktree.zsh"
 source "$DOTFILES_PATH/zsh/key-bindings.zsh"
 
 eval "$(starship init zsh)"
