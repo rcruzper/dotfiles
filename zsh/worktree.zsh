@@ -40,11 +40,19 @@ function wt() {
   fi
   [[ -z "$branch" ]] && return 0
 
-  local repo_name worktree_dir
+  local repo_name worktree_dir checked_out
   repo_name=${repo:t}
   worktree_dir="${repo:h}/${repo_name}-worktrees/${branch}"
 
-  if [[ -d "$worktree_dir" ]]; then
+  # if the branch is already checked out in a worktree (e.g. develop in the main root),
+  # reuse it — git refuses a second checkout of the same branch.
+  checked_out=$(git -C "$repo" worktree list --porcelain \
+    | awk -v b="refs/heads/$branch" '/^worktree /{w=substr($0,10)} $1=="branch"&&$2==b{print w}')
+
+  if [[ -n "$checked_out" ]]; then
+    worktree_dir="$checked_out"
+    print -r -- "wt: '$branch' ya está en un worktree -> $worktree_dir (reuso)"
+  elif [[ -d "$worktree_dir" ]]; then
     print -r -- "wt: el worktree ya existe -> $worktree_dir"
   elif [[ "$mode" == "existente" ]]; then
     # DWIM: use the local branch if it exists, else create a local branch tracking the remote
