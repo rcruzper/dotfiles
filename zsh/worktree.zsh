@@ -144,13 +144,33 @@ function wt-rm() {
     d="${d:h}"
   done
 
-  # land on the repo's base session, then kill the task's
+  # land on another live session, then kill the task's
   # (relies on tmux `detach-on-destroy off`, so killing it doesn't detach you)
   if [[ -n "${TMUX:-}" ]]; then
-    tmux has-session -t "=$repo_name" 2>/dev/null || tmux new-session -d -s "$repo_name" -c "$main_root"
-    tmux switch-client -t "$repo_name"
+    local -a candidates
+    local s target=""
+    # every other live session, most-recently-attached first
+    candidates=("${(@f)$(tmux list-sessions -F '#{session_last_attached} #{session_name}' 2>/dev/null \
+      | sort -rn | cut -d' ' -f2- | grep -vxF -- "$session")}")
+
+    # prefer a sibling of the same repo ('<repo>' or '<repo>/<branch>')
+    for s in $candidates; do
+      [[ "$s" == "$repo_name" || "$s" == "${repo_name}/"* ]] && { target="$s"; break }
+    done
+    # otherwise whatever was used most recently
+    [[ -z "$target" ]] && target="${candidates[1]:-}"
+
+    if [[ -n "$target" ]]; then
+      tmux switch-client -t "=$target"
+    else
+      # nothing else is open: killing the last session would take the server down,
+      # so fall back to the repo's base session purely to keep tmux alive
+      tmux new-session -d -s "$repo_name" -c "$main_root"
+      tmux switch-client -t "=$repo_name"
+      target="$repo_name"
+    fi
   fi
   tmux kill-session -t "=$session" 2>/dev/null
 
-  print -r -- "wt-rm: cerrada '$branch' (worktree, rama y sesión eliminados)"
+  print -r -- "wt-rm: cerrada '$branch' (worktree, rama y sesión eliminados)${target:+ -> $target}"
 }
