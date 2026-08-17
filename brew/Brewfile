@@ -12,7 +12,6 @@ brew 'fd'
 brew 'fx'
 brew 'fzf'
 brew 'git'
-brew "gemini-cli"
 brew 'gh'
 brew 'gnu-sed'
 brew "grep"
