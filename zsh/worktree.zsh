@@ -77,10 +77,13 @@ function wt() {
 
   print -r -- "wt: worktree en $worktree_dir  (rama ${branch}, modo ${mode})"
 
-  # copy .env* into the worktree if present (never overwrite)
+  # copy .env* and .claude/settings.local.json into the worktree if present (never overwrite)
   local f
-  for f in .env .env.local; do
-    [[ -f "$repo/$f" && ! -f "$worktree_dir/$f" ]] && cp "$repo/$f" "$worktree_dir/$f"
+  for f in .env .env.local .env.test .claude/settings.local.json; do
+    if [[ -f "$repo/$f" && ! -f "$worktree_dir/$f" ]]; then
+      mkdir -p "$worktree_dir/${f:h}"
+      cp "$repo/$f" "$worktree_dir/$f"
+    fi
   done
 
   # tmux session (idempotent): 1:claude 2:editor 3:sh
