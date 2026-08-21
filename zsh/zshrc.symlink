@@ -18,7 +18,13 @@ setopt +o nomatch
 source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
 source "$DOTFILES_PATH/zsh/functions.sh"
-source "$DOTFILES_PATH/zsh/worktree.zsh"
+
+# every function file under zsh/functions/ (alphabetical order)
+for _fn_file in "$DOTFILES_PATH"/zsh/functions/*.(zsh|sh)(N); do
+    source "$_fn_file"
+done
+unset _fn_file
+
 source "$DOTFILES_PATH/zsh/key-bindings.zsh"
 
 #eval "$(ssh-agent -s)" > /dev/null
