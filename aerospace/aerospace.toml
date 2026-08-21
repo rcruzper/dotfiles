@@ -24,9 +24,9 @@ automatically-unhide-macos-hidden-apps = true
     1 = 'main'
     2 = 'main'
     3 = 'main'
-    C = 'secondary'
+    4 = 'main'
+    5 = 'main'
     D = 'secondary'
-    E = 'secondary'
     M = 'secondary'
     O = 'secondary'
     R = 'main'
@@ -81,13 +81,7 @@ automatically-unhide-macos-hidden-apps = true
     ctrl-alt-3 = 'workspace 3'
     ctrl-alt-4 = 'workspace 4'
     ctrl-alt-5 = 'workspace 5'
-    ctrl-alt-6 = 'workspace 6'
-    ctrl-alt-7 = 'workspace 7'
-    ctrl-alt-8 = 'workspace 8'
-    ctrl-alt-9 = 'workspace 9'
-    ctrl-alt-c = 'workspace C' # Calendar
-    ctrl-alt-d = 'workspace D' # Claude
-    ctrl-alt-e = 'workspace E' # Email
+    ctrl-alt-d = 'workspace D' # DBeaver
     ctrl-alt-m = 'workspace M' # Music
     ctrl-alt-o = 'workspace O' # Obsidian
     ctrl-alt-r = 'workspace R' # Linear
@@ -105,9 +99,6 @@ automatically-unhide-macos-hidden-apps = true
     ctrl-alt-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
     ctrl-alt-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
     ctrl-alt-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
-    ctrl-alt-shift-d = 'move-node-to-workspace D --focus-follows-window'
-    ctrl-alt-shift-r = 'move-node-to-workspace r --focus-follows-window'
-    ctrl-alt-shift-o = 'move-node-to-workspace O --focus-follows-window'
     ctrl-alt-shift-v = 'move-node-to-workspace V --focus-follows-window'
     
     # Workspace navigation
@@ -137,28 +128,20 @@ automatically-unhide-macos-hidden-apps = true
     backspace = ['close-all-windows-but-current', 'mode main']
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.iCal'
-    run = "move-node-to-workspace C"
-
-[[on-window-detected]]
     if.app-id = 'com.anthropic.claudefordesktop'
     run = "move-node-to-workspace D"
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.mail'
-    run = "move-node-to-workspace E"
 
 [[on-window-detected]]
     if.app-id = 'com.spotify.client'
     run = "move-node-to-workspace M"
 
 [[on-window-detected]]
-    if.app-id = 'com.linear'
-    run = "move-node-to-workspace R"
-
-[[on-window-detected]]
     if.app-id = 'md.obsidian'
     run = "move-node-to-workspace O"
+
+[[on-window-detected]]
+    if.app-id = 'com.linear'
+    run = "move-node-to-workspace R"
 
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
