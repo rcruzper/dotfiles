@@ -3,40 +3,47 @@
 #   wt-rm [-f]  close the current task (worktree + branch + session)
 
 function wt() {
-  command -v fzf    >/dev/null 2>&1 || { print -u2 "wt: necesita fzf"; return 1; }
-  command -v zoxide >/dev/null 2>&1 || { print -u2 "wt: necesita zoxide"; return 1; }
+  command -v fzf    >/dev/null 2>&1 || { print -u2 "wt: fzf is required"; return 1; }
+  command -v zoxide >/dev/null 2>&1 || { print -u2 "wt: zoxide is required"; return 1; }
 
   # pick repo: zoxide dirs that are git roots
   local repo
   repo=$(
     zoxide query -l 2>/dev/null | while IFS= read -r d; do
       [[ -d "$d/.git" ]] && print -r -- "$d"
-    done | fzf --reverse --height=100% --prompt='repo > ' --header='elige repo (zoxide)'
+    done | fzf --reverse --height=100% --prompt='repo > ' --header='pick a repo (zoxide)'
   )
   [[ -z "$repo" ]] && return 0
 
   # pick an existing branch (local+remote) or type a new one. The synthetic top row
-  # "＋ crear «…»" is regenerated live via change:reload; --print-query returns the typed text.
-  local branches out
-  branches=$(
-    {
-      git -C "$repo" for-each-ref --format='%(refname:short)'    refs/heads
-      git -C "$repo" for-each-ref --format='%(refname:lstrip=3)' refs/remotes | grep -vx HEAD
-    } | awk 'NF && !seen[$0]++'
-  )
+  # "＋ create «…»" is regenerated live via change:reload; --print-query returns the typed text.
+  # The branch list is computed once into a temp file: re-running git on every keystroke
+  # made the reload slow and the popup flicker while typing.
+  local branches branches_file out
+  branches_file=$(mktemp)
+  {
+    git -C "$repo" for-each-ref --format='%(refname:short)'    refs/heads
+    git -C "$repo" for-each-ref --format='%(refname:lstrip=3)' refs/remotes | grep -vx HEAD
+  } | awk 'NF && !seen[$0]++' > "$branches_file"
+  branches=$(<"$branches_file")
+  # --disabled: fzf must not filter the visible list itself — its matcher would hide the
+  # "＋ create «old-query»" row the instant the query changes (its text no longer matches),
+  # which made the row blink on every keystroke. Filtering runs inside the reload via
+  # `fzf --filter`, and reload-sync swaps the finished list in one step.
   out=$(
     print -r -- "$branches" \
-      | fzf --print-query --reverse --height=100% --prompt='rama > ' \
-            --header="repo: ${repo:t} · elige una rama o teclea una nueva para crearla" \
-            --bind "change:reload:{ [ -n {q} ] && printf '＋ crear «%s»\n' {q}; { git -C ${(q)repo} for-each-ref --format='%(refname:short)' refs/heads; git -C ${(q)repo} for-each-ref --format='%(refname:lstrip=3)' refs/remotes | grep -vx HEAD; } | awk 'NF && !seen[\$0]++'; }"
+      | fzf --print-query --disabled --reverse --height=100% --prompt='branch > ' \
+            --header="repo: ${repo:t} · pick a branch or type a new name to create it" \
+            --bind "change:reload-sync:{ [ -n {q} ] && printf '＋ create «%s»\n' {q}; fzf --filter {q} < ${(q)branches_file}; true; }"
   )
+  rm -f "$branches_file"
   # --print-query output: line 1 = query, line 2 = selection
   local -a lines; lines=("${(@f)out}")
   local query="${lines[1]:-}" pick="${lines[2]:-}" branch mode
   if [[ -n "$pick" ]] && print -r -- "$branches" | grep -qxF -- "$pick"; then
-    branch="$pick";  mode="existente"
+    branch="$pick";  mode="existing"
   else
-    branch="$query"; mode="nueva"
+    branch="$query"; mode="new"
   fi
   [[ -z "$branch" ]] && return 0
 
@@ -51,10 +58,10 @@ function wt() {
 
   if [[ -n "$checked_out" ]]; then
     worktree_dir="$checked_out"
-    print -r -- "wt: '$branch' ya está en un worktree -> $worktree_dir (reuso)"
+    print -r -- "wt: '$branch' is already checked out in a worktree -> $worktree_dir (reusing it)"
   elif [[ -d "$worktree_dir" ]]; then
-    print -r -- "wt: el worktree ya existe -> $worktree_dir"
-  elif [[ "$mode" == "existente" ]]; then
+    print -r -- "wt: worktree already exists -> $worktree_dir"
+  elif [[ "$mode" == "existing" ]]; then
     # DWIM: use the local branch if it exists, else create a local branch tracking the remote
     mkdir -p "${worktree_dir:h}"
     git -C "$repo" worktree add "$worktree_dir" "$branch" || return 1
@@ -70,12 +77,12 @@ function wt() {
       done
       [[ -z "$base" ]] && base=HEAD
     fi
-    print -r -- "wt: rama nueva '${branch}' desde '${base}'"
+    print -r -- "wt: new branch '${branch}' from '${base}'"
     mkdir -p "${worktree_dir:h}"
     git -C "$repo" worktree add --no-track -b "$branch" "$worktree_dir" "$base" || return 1
   fi
 
-  print -r -- "wt: worktree en $worktree_dir  (rama ${branch}, modo ${mode})"
+  print -r -- "wt: worktree at $worktree_dir  (branch ${branch}, mode ${mode})"
 
   # copy .env* and .claude/settings.local.json into the worktree if present (never overwrite)
   local f
@@ -115,11 +122,11 @@ function wt-rm() {
 
   local worktree_dir main_root repo_name branch session state
   worktree_dir=$(git rev-parse --show-toplevel 2>/dev/null) || {
-    print -u2 "wt-rm: no estás dentro de un repo git"; return 1
+    print -u2 "wt-rm: not inside a git repo"; return 1
   }
   main_root=$(git worktree list --porcelain | sed -n '1s/^worktree //p')
   if [[ "$worktree_dir" == "$main_root" ]]; then
-    print -u2 "wt-rm: estás en el worktree principal, no en una tarea"; return 1
+    print -u2 "wt-rm: you are in the main worktree, not in a task"; return 1
   fi
   repo_name=${main_root:t}
   branch=$(git rev-parse --abbrev-ref HEAD)
@@ -130,7 +137,7 @@ function wt-rm() {
   if [[ -z "$force" ]]; then
     state=$(gh pr view "$branch" --json state -q .state 2>/dev/null)
     if [[ "$state" != "MERGED" ]]; then
-      print -u2 "wt-rm: el PR de '$branch' no está MERGED (estado: ${state:-sin PR}); usa 'wt-rm -f' para forzar"
+      print -u2 "wt-rm: PR for '$branch' is not MERGED (state: ${state:-no PR}); use 'wt-rm -f' to force"
       return 1
     fi
   fi
@@ -175,5 +182,5 @@ function wt-rm() {
   fi
   tmux kill-session -t "=$session" 2>/dev/null
 
-  print -r -- "wt-rm: cerrada '$branch' (worktree, rama y sesión eliminados)${target:+ -> $target}"
+  print -r -- "wt-rm: closed '$branch' (worktree, branch and session removed)${target:+ -> $target}"
 }
