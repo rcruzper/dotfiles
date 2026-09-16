@@ -29,6 +29,7 @@ brew 'starship'
 brew 'tmux'
 brew 'tree'
 brew 'tree-sitter-cli'
+brew 'typescript'
 brew 'typescript-language-server'
 brew 'vim'
 brew "watch"
