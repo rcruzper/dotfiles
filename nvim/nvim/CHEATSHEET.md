@@ -102,7 +102,12 @@ Atajos configurados en este dotfiles. **Leader = `,`**.
 
 ## LSP (en buffers con server activo)
 
-Servidor TS: `vtsls` (con `maxTsServerMemory=8192` para el monorepo).
+Servidor TS: `tsc` — el LSP nativo de TypeScript 7 (Go), que va integrado en el propio
+compilador (`tsc --lsp --stdio`). Coge el binario de `node_modules/.bin` y si no el del
+`PATH` (fórmula `typescript` de brew); exige versión 7+.
+
+Alternativa: `vtsls` (tsserver de TS6, con `maxTsServerMemory=8192`) `NVIM_TS_LSP=vtsls` para usarlo. 
+Usar cuando se necesitan plugins de tsserver (`@effect/language-service`) o los refactors `refactor.*`, que el nativo todavía no soporta.
 
 ### Navegación
 | Atajo | Acción |
@@ -166,7 +171,7 @@ Para arreglos: `,ca` sobre un warning → code action de ESLint (si la regla tie
 
 ## Autocompletado (blink.cmp)
 
-Sources activos: `lsp` (vtsls) · `path` (paths cuando escribes `./`, `~/`, etc.) · `buffer` (palabras de buffers abiertos). **Sin snippets** (decisión).
+Sources activos: `lsp` (`tsc`, o `vtsls` si lo activas) · `path` (paths cuando escribes `./`, `~/`, etc.) · `buffer` (palabras de buffers abiertos). **Sin snippets** (decisión).
 
 ### En insert mode (cuando el menú está visible)
 

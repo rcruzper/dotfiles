@@ -3,6 +3,20 @@
 --   * nvim-lspconfig               — server defaults (cmd, root_dir, filetypes).
 -- Configured via Neovim 0.11+ native vim.lsp.config / vim.lsp.enable.
 -- LspAttach autocmd wires per-buffer keymaps and diagnostic config.
+--
+-- TypeScript: two servers are configured, only one is enabled at a time.
+-- Set NVIM_TS_LSP=vtsls (or edit ts_server below) to switch back.
+--   "tsc"   TypeScript 7 native LSP (Go, `tsc --lsp --stdio`). Measured on the
+--           monorepo: first diagnostics ~1 s, and a full typecheck of apps/web
+--           runs 8x faster than TS6 (6.7 s vs 57 s). It trades memory for that
+--           speed (~3 GB resident) and it ignores tsserver plugins, so
+--           @effect/language-service is lost.
+--   "vtsls" tsserver wrapper (TypeScript 6, JavaScript). Slower, but it loads
+--           the Effect language service plugin and the full refactor set.
+-- lspconfig's `tsc` config picks node_modules/.bin/tsc first and falls back to
+-- the one on $PATH (Homebrew `typescript`); both must report version 7 or newer.
+local ts_server = vim.env.NVIM_TS_LSP or "tsc"
+
 return {
     {
         "neovim/nvim-lspconfig",
@@ -63,7 +77,11 @@ return {
                 },
             })
 
-            vim.lsp.enable("vtsls")
+            if ts_server == "tsc" then
+                vim.lsp.enable("tsc")
+            else
+                vim.lsp.enable("vtsls")
+            end
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
