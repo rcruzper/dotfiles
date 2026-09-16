@@ -17,6 +17,9 @@ alias dotfiles="cd ~/.dotfiles"
 # tmux aliases
 alias ta='tmux attach'
 
+# workmux aliases
+alias wm='workmux'
+
 # kubernetes aliases
 alias k=kubectl
 alias kaf='kubectl apply -f'

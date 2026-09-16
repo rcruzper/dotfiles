@@ -21,6 +21,7 @@ brew 'jq'
 brew "mise"
 brew 'neovim'
 brew 'openssl'
+brew 'raine/workmux/workmux'
 brew 'rename'
 brew 'ripgrep'
 brew 'rustup'
