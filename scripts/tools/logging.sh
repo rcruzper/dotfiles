@@ -18,3 +18,7 @@ function success() {
 function user() {
     printf "[ ${yellow}??${reset} ] %s\n" "$@"
 }
+
+function warn() {
+    printf "[ ${yellow}!!${reset} ] %s\n" "$@"
+}
