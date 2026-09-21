@@ -11,7 +11,7 @@ then
     success 'Installing brew'
 
     info 'Installing iterm2'
-    brew cask install iterm2
+    brew install --cask iterm2
     success 'Installing iterm2'
 else
     info 'Updating brew'
@@ -19,8 +19,12 @@ else
     success 'Updating brew'
 
     info 'Upgrading brew formulae'
-    brew upgrade -y
+    brew upgrade --formula -y || warn 'One formula or more did not upgrade'
     success 'Upgrading brew formulae'
+
+    info 'Upgrading brew casks'
+    brew upgrade --cask -y || warn 'One cask or more did not upgrade'
+    success 'Upgrading brew casks'
 fi
 
 info 'Installing homebrew bundle packages'
