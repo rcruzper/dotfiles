@@ -78,10 +78,12 @@ Atajos configurados en este dotfiles. **Leader = `,`**.
 ### UI (`,u*`)
 | Atajo | Acción |
 |-------|--------|
+| `,uc` | Toggle buffer centrado a 120 col. con wrap (no-neck-pain). Solo crea márgenes si la terminal supera ~140 col. |
 | `,uC` | Picker de colorschemes |
 | `,un` | Descartar todas las notificaciones visibles |
 | `,uz` | Toggle zen mode (distracción-free) |
 | `,uZ` | Toggle zoom (pantalla completa de la ventana actual) |
+| `,uw` | Toggle wrap (ajuste de línea) en la ventana actual |
 
 ### Buffer (`,b*`)
 | Atajo | Acción |

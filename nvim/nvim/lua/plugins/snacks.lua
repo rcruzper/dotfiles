@@ -82,6 +82,7 @@ return {
 
             { "<leader>uz",      function() Snacks.zen() end,                                             desc = "Toggle Zen Mode" },
             { "<leader>uZ",      function() Snacks.zen.zoom() end,                                       desc = "Toggle Zoom" },
+            { "<leader>uw",      function() Snacks.toggle.option("wrap", { name = "Wrap" }):toggle() end, desc = "Toggle Wrap" },
 
             { "<leader>,",       function() Snacks.picker.buffers() end,                                  desc = "Buffers" },
             { "<leader>/",       pick("grep"),                                                            desc = "Grep (Root Dir)" },
