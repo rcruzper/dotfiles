@@ -12,6 +12,7 @@ brew 'fd'
 brew 'fx'
 brew 'fzf'
 brew 'git'
+brew 'git-delta'
 brew 'gh'
 brew 'gnu-sed'
 brew "grep"
