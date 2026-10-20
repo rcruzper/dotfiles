@@ -4,7 +4,7 @@ export KUBE_EDITOR='nvim'
 export HOMEBREW_NO_ANALYTICS=true
 export HOMEBREW_CURL_RETRIES=1
 
-export FZF_DEFAULT_OPTS="--height 60% --color bg+:240"
+export FZF_DEFAULT_OPTS="--height 60%"
 
 export DOTFILES_PATH="$HOME/.dotfiles"
 
