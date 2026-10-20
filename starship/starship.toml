@@ -32,8 +32,5 @@ style = 'fg:love'
 [aws]
 disabled = true
 
-#[package]
-#disabled = true
-
 [nodejs]
 style = 'fg:pine'
