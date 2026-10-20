@@ -28,6 +28,33 @@
 	<false/>
 	<key>AlwaysOpenWindowAtStartup</key>
 	<false/>
+	<key>CodeReviewSavedPrompts</key>
+	<data>
+	W3sibmFtZSI6IkRlZmF1bHQiLCJ1dWlkIjoiQzQ5RTdGRjMtMkI0OC00QkI3LTkwMUEt
+	RUFCQzc1ODcwOEQ2IiwidGV4dCI6IlJldmlldyB0aGUgcGVuZGluZyBjaGFuZ2VzIGlu
+	IHRoaXMgcmVwby4gRmxhZyBpc3N1ZXMgYSBjYXJlZnVsIG1haW50YWluZXIgd291bGQg
+	YmxvY2sgb24gYmVmb3JlIG1lcmdlLCBpbiByb3VnaGx5IHRoaXMgb3JkZXI6XG4gIDEu
+	IENvcnJlY3RuZXNzIOKAlCBsb2dpYyBlcnJvcnMsIGJyb2tlbiBpbnZhcmlhbnRzLCBt
+	aXNzZWQgZWRnZSBjYXNlcywgb2ZmLWJ5LW9uZSwgcmFjZXMsIGxpZmV0aW1lXC9tZW1v
+	cnkgYnVncywgZXJyb3IgcGF0aHMgdGhhdCBzd2FsbG93IGZhaWx1cmVzLlxuICAyLiBT
+	ZWN1cml0eSDigJQgaW5qZWN0aW9uLCBhdXRoblwvYXV0aHogbWlzdGFrZXMsIHNlY3Jl
+	dCBoYW5kbGluZywgdW5zYWZlIGRlc2VyaWFsaXphdGlvbiwgdW5zYWZlIGRlZmF1bHRz
+	LCBUT0NUT1UuXG4gIDMuIFJlbGlhYmlsaXR5ICYgcGVyZm9ybWFuY2Ug4oCUIGJsb2Nr
+	aW5nIHRoZSB3cm9uZyB0aHJlYWQsIHVuYm91bmRlZCByZXNvdXJjZSB1c2UsIGFjY2lk
+	ZW50YWwgTyhOwrIpLCByZXRyaWVzIHdpdGhvdXQgYmFja29mZiwgc2lsZW50IGZhaWx1
+	cmUgcGF0aHMuXG4gIDQuIENvbnRyYWN0IHJpc2sg4oCUIGJlaGF2aW9yIGNoYW5nZXMg
+	Y2FsbGVycyByZWx5IG9uLCBzaWxlbnRseSBjaGFuZ2VkIGRlZmF1bHRzLCBicm9rZW4g
+	YmFja3dhcmQgY29tcGF0aWJpbGl0eSwgbWlzc2luZyBtaWdyYXRpb25zLlxuXG5Gb3Ig
+	ZWFjaCBmaW5kaW5nIGNpdGUgYGZpbGU6bGluZWAsIGV4cGxhaW4gKndoeSogaXQgaXMg
+	d3JvbmcgKG5vdCB3aGF0IHRoZSBjb2RlIGRvZXMpLCBhbmQgcHJvcG9zZSBhIGNvbmNy
+	ZXRlIGZpeCB3aGVuIG9uZSBpcyBvYnZpb3VzLiBCZSBjYWxpYnJhdGVkOiBpZiBhIGZp
+	bmRpbmcgaXMgbm90IGhpZ2gtY29uZmlkZW5jZSwgc2F5IHNvIG9yIHNraXAgaXQuIFZl
+	cmlmeSBjbGFpbXMgYWdhaW5zdCB0aGUgYWN0dWFsIGNvZGUgcmF0aGVyIHRoYW4gaW5m
+	ZXJyaW5nIGZyb20gbmFtZXMuXG5cblNraXAgcHVyZSBzdHlsZSwgZm9ybWF0dGluZywg
+	bmFtaW5nLCBhbmQgYW55dGhpbmcgYSBsaW50ZXIgb3IgQ0kgYWxyZWFkeSBlbmZvcmNl
+	cy5cblxuSWYgeW91IGZpbmQgbm90aGluZyB3b3J0aCBmaXhpbmcsIHNheSBzbyBwbGFp
+	bmx5LiJ9XQ==
+	</data>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>catppuccin-frappe</key>
@@ -1087,10 +1114,6 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
-	<key>NeverWarnAboutShortLivedSessions_08BD0ACD-182B-4465-B3D9-2E3F7608338F</key>
-	<true/>
-	<key>NeverWarnAboutShortLivedSessions_08BD0ACD-182B-4465-B3D9-2E3F7608338F_selection</key>
-	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1892,7 +1915,7 @@
 			</array>
 			<key>Keyboard Map</key>
 			<dict>
-				<key>0x2f-0x240000-0x4b</key>
+				<key>0x2f-0x240000-0x4b-0x1</key>
 				<dict>
 					<key>Action</key>
 					<integer>11</integer>
@@ -2232,8 +2255,39 @@
 	<false/>
 	<key>WindowPlacement</key>
 	<integer>3</integer>
+	<key>Workgroups</key>
+	<data>
+	W3sibmFtZSI6IkNsYXVkZSBDb2RlIiwidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4u
+	Y2xhdWRlQ29kZSIsInNlc3Npb25zIjpbeyJ1cmxTdHJpbmciOiIiLCJtb2RlIjoicmVn
+	dWxhciIsImNvbW1hbmQiOiIiLCJwZXJGaWxlQ29tbWFuZCI6IiIsInRvb2xiYXJJdGVt
+	cyI6W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6ImdpdFN0YXR1cyJ9LHsi
+	a2luZCI6ImF1dG9SZXF1ZXN0UmV2aWV3V2hlbklkbGUifV0sImRpc3BsYXlOYW1lIjoi
+	Q2hhdCIsInVuaXF1ZUlkZW50aWZpZXIiOiJidWlsdGluLmNsYXVkZUNvZGUubWFpbiIs
+	ImtpbmQiOnsia2luZCI6InJvb3QifX0seyJ1cmxTdHJpbmciOiIiLCJwYXJlbnRJRCI6
+	ImJ1aWx0aW4uY2xhdWRlQ29kZS5tYWluIiwiY29tbWFuZCI6ImdpdCBkaWZmdG9vbCAt
+	eSAteCB2aW1kaWZmIFxcKGdpdEJhc2UpIiwicGVyRmlsZUNvbW1hbmQiOiJnaXQgZGlm
+	ZnRvb2wgLXkgLXggdmltZGlmZiBcXChnaXRCYXNlKSAtLSBcXChmaWxlKSIsInRvb2xi
+	YXJJdGVtcyI6W3sia2luZCI6Im1vZGVTd2l0Y2hlciJ9LHsia2luZCI6ImNoYW5nZWRG
+	aWxlU2VsZWN0b3IifSx7ImtpbmQiOiJnaXRCYXNlU2VsZWN0b3IifSx7ImZvcndhcmRT
+	aG9ydGN1dCI6eyJzZXJpYWxpemVkIjoiMHhmNzAzLTB4MzQwMDAwLTB4N2MifSwiYmFj
+	a1Nob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIweGY3MDItMHgzNDAwMDAtMHg3YiJ9LCJr
+	aW5kIjoibmF2aWdhdGlvbiIsInJlbG9hZFNob3J0Y3V0Ijp7InNlcmlhbGl6ZWQiOiIw
+	eDcyLTB4MTAwMDAwLTB4ZiJ9fV0sImRpc3BsYXlOYW1lIjoiRGlmZiIsIm1vZGUiOiJk
+	aWZmIiwidW5pcXVlSWRlbnRpZmllciI6ImJ1aWx0aW4uY2xhdWRlQ29kZS5kaWZmIiwi
+	a2luZCI6eyJraW5kIjoicGVlciJ9fSx7InVybFN0cmluZyI6IiIsInBhcmVudElEIjoi
+	YnVpbHRpbi5jbGF1ZGVDb2RlLm1haW4iLCJjb21tYW5kIjoiY2xhdWRlIFxcKGNvZGVS
+	ZXZpZXdQcm9tcHQpIC0tYXBwZW5kLXN5c3RlbS1wcm9tcHQtZmlsZSAnXFwoY29kZVJl
+	dmlld1N5c3RlbVByb21wdEZpbGUpJyAtLXNldHRpbmdzICdcXChpdGVybTIuYXBwQnVu
+	ZGxlUGF0aClcL0NvbnRlbnRzXC9SZXNvdXJjZXNcL2NvZGUtcmV2aWV3LXNldHRpbmdz
+	LnR4dCciLCJwZXJGaWxlQ29tbWFuZCI6IiIsInRvb2xiYXJJdGVtcyI6W3sia2luZCI6
+	Im1vZGVTd2l0Y2hlciJ9LHsic2hvcnRjdXQiOnsic2VyaWFsaXplZCI6IjB4NzItMHgx
+	MDAwMDAtMHhmIn0sImtpbmQiOiJyZWxvYWQifSx7ImtpbmQiOiJhdXRvU2VuZENsaXBw
+	aW5nc1doZW5JZGxlIn1dLCJkaXNwbGF5TmFtZSI6IkNvZGUgUmV2aWV3IiwibW9kZSI6
+	ImNvZGVSZXZpZXciLCJ1bmlxdWVJZGVudGlmaWVyIjoiYnVpbHRpbi5jbGF1ZGVDb2Rl
+	LnJldmlldyIsImtpbmQiOnsia2luZCI6InBlZXIifX1dfV0=
+	</data>
 	<key>findMode_iTerm</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
