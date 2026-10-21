@@ -2,7 +2,7 @@
 
 add_newline = false
 format = '$directory$git_branch$character'
-right_format = '$all'
+right_format = '$all$git_status'
 command_timeout = 5000
 
 palette = "rose-pine"
@@ -27,6 +27,7 @@ format = '[$symbol$branch(:$remote_branch)]($style) '
 style = 'fg:gold'
 
 [git_status]
+format = '( [\[$all_status$ahead_behind\]]($style))'
 style = 'fg:love'
 
 [aws]

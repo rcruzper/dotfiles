@@ -15,6 +15,10 @@ setopt EXTENDED_HISTORY
 setopt HIST_FCNTL_LOCK
 setopt +o nomatch
 
+# zsh keeps one empty column after RPROMPT by default. 0 puts the right prompt at the edge.
+ZLE_RPROMPT_INDENT=0
+NODE_OPTIONS="--max-old-space-size=8192"
+
 source "$DOTFILES_PATH/zsh/exports.sh"
 source "$DOTFILES_PATH/zsh/aliases.sh"
 source "$DOTFILES_PATH/zsh/functions.sh"
@@ -33,4 +37,3 @@ eval "$(zoxide init zsh)"
 eval "$(mise activate zsh)"
 eval "$(workmux completions zsh)"
 
-NODE_OPTIONS="--max-old-space-size=8192"
