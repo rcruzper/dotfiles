@@ -1,0 +1,13 @@
+# aesthetics
+theme = Rose Pine Moon
+window-padding-x = 12
+window-padding-y = 8
+macos-titlebar-style = hidden
+mouse-hide-while-typing = true
+
+# typography
+font-size = 15
+font-thicken = false
+font-thicken-strength = 1
+adjust-cell-height = 1
+
