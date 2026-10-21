@@ -38,7 +38,6 @@ COMPONENTS=(
     "zsh        zsh/zsh.sh                 brew,zsh   -"
     "starship   starship/starship.sh       -          -"
     "aerospace  aerospace/aerospace.sh     -          -"
-    "iterm2     iterm2/iterm2.sh           -          -"
     "ghostty    ghostty/ghostty.sh         -          -"
     "nvim       nvim/nvim.sh               nvim       -"
     "tmux       tmux/tmux.sh               tmux,git   -"

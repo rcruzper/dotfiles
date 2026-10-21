@@ -46,7 +46,6 @@ cask 'dbeaver-community'
 cask "docker-desktop"
 cask 'font-jetbrains-mono-nerd-font'
 cask 'ghostty'
-cask 'iterm2'
 cask 'jetbrains-toolbox'
 cask 'linear'
 cask 'notion'

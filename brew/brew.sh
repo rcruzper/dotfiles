@@ -11,10 +11,6 @@ then
     info 'Installing brew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     success 'Installing brew'
-
-    info 'Installing iterm2'
-    brew install --cask iterm2
-    success 'Installing iterm2'
 else
     info 'Updating brew'
     brew update

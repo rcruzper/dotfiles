@@ -18,10 +18,6 @@ make
 
 If you want to update the configuration, you just need to execute `cd ~/.dotfiles && make` again.
 
-### iTerm2 configuration (optional)
-
-If you want to see iTerm2 as the image below you need to enable option 'Load preferences from a custom folder or URL:' in General Tab with path '~/.dotfiles/iterm2'
-
 ## 🐛 Bugs
 
 If you have any problem installing dotfiles, please [open an issue](https://github.com/rcruzper/dotfiles/issues).
