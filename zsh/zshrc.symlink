@@ -1,6 +1,8 @@
 # source antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
+zstyle ':zephyr:plugin:completion' use-cache yes
+
 # initialize plugins statically with ${ZDOTDIR:-$HOME}/.zsh_plugins.txt
 antidote load
 
@@ -31,9 +33,18 @@ unset _fn_file
 
 source "$DOTFILES_PATH/zsh/key-bindings.zsh"
 
-#eval "$(ssh-agent -s)" > /dev/null
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+_cached_eval() {
+    local bin=${commands[$1]:A} cache="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/$1-init.zsh" first
+    [[ -r $cache ]] && read -r first < $cache
+    if [[ $first != "# $bin" ]]; then
+        mkdir -p ${cache:h}
+        { print -r -- "# $bin"; "$@" } > $cache
+    fi
+    source $cache
+}
+
+_cached_eval starship init zsh
+_cached_eval zoxide init zsh
 eval "$(mise activate zsh)"
-eval "$(workmux completions zsh)"
+unfunction _cached_eval
 

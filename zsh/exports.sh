@@ -23,10 +23,13 @@ export SAVEHIST=30000
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="git --no-pager diff --name-only; git ls-files --others --exclude-standard"
 
+# The Homebrew prefix is fixed on Apple silicon. Do not use `brew --prefix`
+# here: each call costs ~20 ms at every shell start.
+
 # Configure completions: https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
 if type brew &>/dev/null
 then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+    FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
 fi
 
-export PATH=$(brew --prefix rustup)/bin:/opt/homebrew/bin:~/.bun/bin:$PATH
+export PATH=/opt/homebrew/opt/rustup/bin:/opt/homebrew/bin:~/.bun/bin:$PATH
