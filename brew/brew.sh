@@ -4,6 +4,8 @@ set -euo pipefail
 
 source "$DOTFILES_ROOT/scripts/tools/logging.sh"
 
+export HOMEBREW_CURLRC="$DOTFILES_ROOT/brew/curlrc"
+
 if [ ! "$(command -v brew)" ]
 then
     info 'Installing brew'

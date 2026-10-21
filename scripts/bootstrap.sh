@@ -1,24 +1,76 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+#
+# Entry point of the dotfiles installation. Run it with `make`.
+#
+# Environment variables:
+#   VERBOSE=1     show the full output of every component
+#   KEEP_GOING=1  continue even when a critical component fails
+#   SKIP_SUDO=1   do not ask for the password before the installation
+#   NO_COLOR=1    disable colours
+#
+# Exit code: 0 when no component failed, 1 otherwise.
+#
+
+set -uo pipefail
 
 cd "$(dirname "$0")/.." > /dev/null
 DOTFILES_ROOT=$(pwd -P)
-
 export DOTFILES_ROOT
 
-source "$DOTFILES_ROOT/scripts/tools/logging.sh"
+VERBOSE="${VERBOSE:-0}"
+KEEP_GOING="${KEEP_GOING:-0}"
+SKIP_SUDO="${SKIP_SUDO:-0}"
 
-"$DOTFILES_ROOT/macos/macos.sh"
-#"$DOTFILES_ROOT/git/git.sh"
-"$DOTFILES_ROOT/brew/brew.sh"
-"$DOTFILES_ROOT/node/node.sh"
-"$DOTFILES_ROOT/scripts/symlink.sh"
-"$DOTFILES_ROOT/zsh/zsh.sh"
-"$DOTFILES_ROOT/starship/starship.sh"
-"$DOTFILES_ROOT/aerospace/aerospace.sh"
-"$DOTFILES_ROOT/iterm2/iterm2.sh"
-"$DOTFILES_ROOT/nvim/nvim.sh"
-"$DOTFILES_ROOT/tmux/tmux.sh"
-"$DOTFILES_ROOT/bat/bat.sh"
+source "$DOTFILES_ROOT/scripts/tools/runner.sh"
 
+# Component registry
+#
+#   name     : label in the output and name of the log file
+#   script   : installer, relative to the repository root
+#   requires : comma separated binaries
+#   flags    : `critical` stops the installation when the component fails
+#
+COMPONENTS=(
+    # name      script                     requires   flags
+    "macos      macos/macos.sh             -          -"
+    "brew       brew/brew.sh               -          critical"
+    "node       node/node.sh               bun        -"
+    "symlink    scripts/symlink.sh         -          -"
+    "zsh        zsh/zsh.sh                 brew,zsh   -"
+    "starship   starship/starship.sh       -          -"
+    "aerospace  aerospace/aerospace.sh     -          -"
+    "iterm2     iterm2/iterm2.sh           -          -"
+    "ghostty    ghostty/ghostty.sh         -          -"
+    "nvim       nvim/nvim.sh               nvim       -"
+    "tmux       tmux/tmux.sh               tmux,git   -"
+    "bat        bat/bat.sh                 bat        -"
+)
+
+trap 'printf "\n"; trap - INT TERM; kill 0' INT TERM
+trap stop_sudo_keepalive EXIT
+
+start_run "${#COMPONENTS[@]}"
+
+aborted=''
+index=0
+total=${#COMPONENTS[@]}
+
+for entry in "${COMPONENTS[@]}"
+do
+    index=$((index + 1))
+    read -r name script requires flags <<< "$entry"
+
+    if run_component "$index" "$total" "$name" "$script" "$requires"
+    then
+        continue
+    fi
+
+    if [ "$flags" = 'critical' ] && [ "$KEEP_GOING" != '1' ]
+    then
+        aborted="$name"
+        break
+    fi
+done
+
+finish_run "$aborted"
