@@ -10,7 +10,6 @@
 # Before the source of this file, set these variables:
 #   DOTFILES_ROOT  absolute path of the repository
 #   VERBOSE        1 shows the full output of every component
-#   SKIP_SUDO      1 does not ask for the password
 #
 # This file must work with bash 3.2, the bash of a new Mac.
 
@@ -26,8 +25,9 @@ COUNT_OK=0
 COUNT_SKIP=0
 FAILED_NAMES=()
 FAILED_SCRIPTS=()
-SUDO_PID=''
 START_ALL=0
+
+export SUDO_ASKPASS="$DOTFILES_ROOT/scripts/tools/askpass.sh"
 
 # The live view redraws lines in place, so it needs a terminal.
 if [ -t 1 ] && [ "$VERBOSE" != '1' ]
@@ -86,42 +86,6 @@ function print_failures() {
         printf '      %sretry    : DOTFILES_ROOT=%s %s%s\n\n' "$c_dim" "$DOTFILES_ROOT" "$DOTFILES_ROOT/${FAILED_SCRIPTS[$i]}" "$c_reset"
         i=$((i + 1))
     done
-}
-
-# Ask for the password once, before the first component.
-#
-# Homebrew uses sudo to upgrade some casks, for example docker-desktop and
-# spotify. A component runs in the background, where a sudo prompt cannot
-# read the terminal. A loop refreshes the sudo timestamp every 50 seconds, so
-# sudo does not ask again during the installation.
-function start_sudo_keepalive() {
-    if [ "$SKIP_SUDO" = '1' ]
-    then
-        return 0
-    fi
-
-    if ! sudo -v -p "  ${c_yellow}??${c_reset}  Password of your account (brew upgrades some casks with sudo): "
-    then
-        warn 'sudo has no password. Some casks can fail'
-        return 0
-    fi
-
-    printf '\n'
-
-    while kill -0 "$$" 2> /dev/null
-    do
-        sudo -n true 2> /dev/null
-        sleep 50
-    done &
-    SUDO_PID=$!
-}
-
-function stop_sudo_keepalive() {
-    if [ -n "$SUDO_PID" ]
-    then
-        kill "$SUDO_PID" 2> /dev/null
-        SUDO_PID=''
-    fi
 }
 
 ###############################################################################
@@ -237,7 +201,7 @@ function run_component() {
 # Run lifecycle                                                               #
 ###############################################################################
 
-# Prepare the log directory, show the header and ask for the password.
+# Prepare the log directory and show the header.
 function start_run() {
     local count=$1
 
@@ -245,7 +209,6 @@ function start_run() {
     mkdir -p "$LOG_DIR"
 
     print_header "$count"
-    start_sudo_keepalive
     START_ALL=$SECONDS
 }
 

@@ -6,7 +6,6 @@
 # Environment variables:
 #   VERBOSE=1     show the full output of every component
 #   KEEP_GOING=1  continue even when a critical component fails
-#   SKIP_SUDO=1   do not ask for the password before the installation
 #   NO_COLOR=1    disable colours
 #
 # Exit code: 0 when no component failed, 1 otherwise.
@@ -20,7 +19,6 @@ export DOTFILES_ROOT
 
 VERBOSE="${VERBOSE:-0}"
 KEEP_GOING="${KEEP_GOING:-0}"
-SKIP_SUDO="${SKIP_SUDO:-0}"
 
 source "$DOTFILES_ROOT/scripts/tools/runner.sh"
 
@@ -48,7 +46,6 @@ COMPONENTS=(
 )
 
 trap 'printf "\n"; trap - INT TERM; kill 0' INT TERM
-trap stop_sudo_keepalive EXIT
 
 start_run "${#COMPONENTS[@]}"
 
