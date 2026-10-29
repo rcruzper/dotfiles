@@ -155,5 +155,5 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
     if.app-id = 'org.videolan.vlc'
-    run = "move-node-to-workspace V"
+    run = ['layout tiling', 'move-node-to-workspace V']
 
