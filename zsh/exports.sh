@@ -16,6 +16,9 @@ export DOTFILES_PATH="$HOME/.dotfiles"
 
 export BAT_THEME="rose-pine"
 
+# Colima socket, for tools that ignore docker contexts (e.g. Testcontainers)
+export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=30000
 export SAVEHIST=30000

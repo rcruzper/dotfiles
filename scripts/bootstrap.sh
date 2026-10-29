@@ -42,6 +42,7 @@ COMPONENTS=(
     "nvim       nvim/nvim.sh               nvim       -"
     "tmux       tmux/tmux.sh               tmux,git   -"
     "bat        bat/bat.sh                 bat        -"
+    "colima     colima/colima.sh           colima,jq  -"
 )
 
 trap 'printf "\n"; trap - INT TERM; kill 0' INT TERM
