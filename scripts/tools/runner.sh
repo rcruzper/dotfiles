@@ -95,35 +95,50 @@ function print_failures() {
 # Draw the spinner and the last lines of the log until the component ends.
 #
 # The cursor stays at the end of the last line of the block. Each frame moves
-# the cursor up to the first line, clears the screen below it and draws the
-# block again. At the end the block disappears, and the caller writes the
-# result on that line.
+# the cursor up to the first line and writes the block again over the old one.
+# At the end the block disappears, and the caller writes the result on that
+# line.
 function show_progress() {
     local pid=$1 prefix=$2 log=$3 start=$4
-    local frame=0 drawn=0 width line
+    local frame=0 drawn=0 width line lines frame_text chunk
 
     width=$(( $(tput cols 2> /dev/null || echo 80) - 8 ))
 
     while kill -0 "$pid" 2> /dev/null
     do
-        if [ "$drawn" -gt 0 ]
-        then
-            printf '\033[%dA' "$drawn"
-        fi
-
-        printf '\r\033[J%s %s%s%s  %s' "$prefix" \
-            "$c_blue" "${SPINNER_FRAMES[$frame]}" "$c_reset" "$(fmt_duration "$((SECONDS - start))")"
-
         # sed removes colour codes, and keeps only the text after the last
         # carriage return of a progress bar. cut keeps each line on one row.
-        drawn=0
-        while IFS= read -r line || [ -n "$line" ]
-        do
-            printf '\n      %s│ %s%s' "$c_dim" "$line" "$c_reset"
-            drawn=$((drawn + 1))
-        done < <(tail -n "$TAIL_LINES" "$log" \
+        lines=$(tail -n "$TAIL_LINES" "$log" \
             | sed -e $'s/\033\\[[0-9;?]*[A-Za-z]//g' -e $'s/.*\r//' \
             | cut -c "1-$width")
+
+        # Build the full frame first, and write it with one printf. Each line
+        # writes over the old line and clears only the rest of it, so the
+        # block is never empty on the screen. \033[?2026h and \033[?2026l
+        # tell the terminal to show the frame only when it is complete.
+        frame_text=$'\033[?2026h'
+        if [ "$drawn" -gt 0 ]
+        then
+            printf -v chunk '\033[%dA' "$drawn"
+            frame_text+=$chunk
+        fi
+
+        printf -v chunk '\r%s %s%s%s  %s\033[K' "$prefix" \
+            "$c_blue" "${SPINNER_FRAMES[$frame]}" "$c_reset" "$(fmt_duration "$((SECONDS - start))")"
+        frame_text+=$chunk
+
+        drawn=0
+        if [ -n "$lines" ]
+        then
+            while IFS= read -r line
+            do
+                printf -v chunk '\n      %s│ %s%s\033[K' "$c_dim" "$line" "$c_reset"
+                frame_text+=$chunk
+                drawn=$((drawn + 1))
+            done <<< "$lines"
+        fi
+
+        printf '%s\033[J\033[?2026l' "$frame_text"
 
         frame=$(( (frame + 1) % ${#SPINNER_FRAMES[@]} ))
         sleep 0.2
