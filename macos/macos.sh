@@ -35,6 +35,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 #defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 ###############################################################################
+# Sound                                                                       #
+###############################################################################
+
+# Play sound effects through: "Selected sound output device" (0 = a fixed device)
+defaults -currentHost write com.apple.soundpref AlertsUseMainDevice -int 1
+
+###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
