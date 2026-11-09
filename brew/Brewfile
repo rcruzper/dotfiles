@@ -5,6 +5,7 @@ tap "nikitabobko/tap"
 brew "antidote"
 brew 'awscli'
 brew 'bat'
+brew 'bitwarden-cli'
 brew 'bun'
 brew "cloudflared"
 brew 'cmake'
@@ -38,6 +39,7 @@ brew 'tree'
 brew 'tree-sitter-cli'
 brew 'typescript'
 brew 'typescript-language-server'
+brew 'unar'
 brew 'vim'
 brew "watch"
 brew 'wget'
